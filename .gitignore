@@ -1,0 +1,18 @@
+# Durum ve geçici dosyalar
+durum_*.json
+*.jsonl
+*.log
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Yerel Claude / IDE ayarları
+.claude/settings.local.json
+.vscode/
+.idea/
+
+# Sistem
+Thumbs.db
+.DS_Store
