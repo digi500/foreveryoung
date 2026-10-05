@@ -1,5 +1,9 @@
 # Sorular
 
+[ 🇬🇧 Read in English (İngilizce Sürüm) → ](questions.en.md)
+
+---
+
 Bu projede yapay zekâ modelleri (Gemini ve Claude) tarafından tartışılan temel sorular:
 
 ---

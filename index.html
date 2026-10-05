@@ -544,10 +544,29 @@
     }
   ];
 
+  function updateTabLabels() {
+    files.forEach((file, idx) => {
+      const tab = document.getElementById(`tab-${idx}`);
+      if (tab) {
+        if (idx === 0) {
+          tab.textContent = (currentLang === 'en') ? 'README.en.md' : 'README.md';
+        } else {
+          tab.textContent = (currentLang === 'en') ? file.name.replace('.md', '.en.md') : file.name;
+        }
+      }
+    });
+  }
+
   function setLang(lang) {
     currentLang = lang;
+    try { localStorage.setItem('foreveryoung_lang', lang); } catch (e) {}
+    document.documentElement.lang = lang;
+    document.title = (lang === 'tr') ? 'foreveryoung — Yapay Zekâ Diyalogları' : 'foreveryoung — AI Dialogues';
+    
     document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    
+    updateTabLabels();
     showTopic(currentIndex);
   }
 
@@ -558,37 +577,55 @@
     });
 
     const file = files[index];
-    document.getElementById('current-filename').textContent = file.name;
+    const displayFilename = (index === 0) 
+      ? (currentLang === 'en' ? 'README.en.md' : 'README.md')
+      : (currentLang === 'en' ? file.name.replace('.md', '.en.md') : file.name);
+
+    document.getElementById('current-filename').textContent = displayFilename;
     
     let html = file.content[currentLang];
     
     // Add GitHub links at the bottom of content
-    if (index > 0 && index < 7) {
-      const topicNum = index;
-      const discussUrl = "https://github.com/digi500/foreveryoung/discussions";
-      const anchor = (currentLang === "en") ? "#english" : "#türkçe";
-      const fileUrl = `https://github.com/digi500/foreveryoung/blob/main/tartisma/${file.name}${anchor}`;
-      
-      const labelSource = (currentLang === 'tr') ? "Bu dosyanın ham Markdown halini GitHub'da gör →" : "View raw Markdown file on GitHub →";
-      const labelDiscuss = (currentLang === 'tr') ? "Bu soru hakkında GitHub'da tartışmaya katıl →" : "Join discussion on GitHub →";
+    const isTopic = (index > 0 && index < 7);
+    const isReadme = (index === 0);
 
-      html += `
-        <div class="action-row">
-          <a href="${fileUrl}" target="_blank">${labelSource}</a>
-          <span>•</span>
-          <a href="${discussUrl}" target="_blank">${labelDiscuss}</a>
-        </div>
-      `;
-    }
+    const discussUrl = "https://github.com/digi500/foreveryoung/discussions";
+    const fileUrl = isReadme
+      ? `https://github.com/digi500/foreveryoung/blob/main/${displayFilename}`
+      : `https://github.com/digi500/foreveryoung/blob/main/tartisma/${displayFilename}`;
+
+    const labelSource = (currentLang === 'tr') 
+      ? `Bu dosyanın ham Markdown halini GitHub'da gör (${displayFilename}) →` 
+      : `View raw Markdown file on GitHub (${displayFilename}) →`;
+    const labelDiscuss = (currentLang === 'tr') 
+      ? "Bu soru hakkında GitHub'da tartışmaya katıl →" 
+      : "Join discussion on GitHub →";
+
+    html += `
+      <div class="action-row">
+        <a href="${fileUrl}" target="_blank" rel="noopener">${labelSource}</a>
+        ${isTopic ? `<span>•</span><a href="${discussUrl}" target="_blank" rel="noopener">${labelDiscuss}</a>` : ''}
+      </div>
+    `;
 
     document.getElementById('content-body').innerHTML = html;
   }
 
   // Initialize
-  
-  // Tarayici dilini otomatik algila
-  const browserLang = (navigator.language || navigator.userLanguage || 'tr').toLowerCase();
-  const detectedLang = browserLang.startsWith('tr') ? 'tr' : 'en';
+  // Tarayıcı dilini veya kayıtlı kullanıcı tercihini algıla
+  let detectedLang = 'en';
+  try {
+    const savedLang = localStorage.getItem('foreveryoung_lang');
+    if (savedLang === 'tr' || savedLang === 'en') {
+      detectedLang = savedLang;
+    } else {
+      const browserLang = (navigator.language || (navigator.languages && navigator.languages[0]) || 'tr').toLowerCase();
+      detectedLang = browserLang.startsWith('tr') ? 'tr' : 'en';
+    }
+  } catch (e) {
+    const browserLang = (navigator.language || 'tr').toLowerCase();
+    detectedLang = browserLang.startsWith('tr') ? 'tr' : 'en';
+  }
   setLang(detectedLang);
 
 </script>
