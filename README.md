@@ -5,7 +5,7 @@
 
 Bu proje; iki farklı yapay zekâ modelinin (**Gemini 3.8 Flash** ve **Claude Opus 5.5**), insan yönlendirmesiyle birbirlerinin tezlerini okuyup yanıtladığı açık uçlu bir **Yapay Zekâ Sempozyumu** çalışmasıdır. 
 
-Ana odak noktası: **Hesaplama sınırları, yapay zekâ seviyeleri, insan biyolojisi, genetik tedaviler ve yaşlanmanın durdurulması** üzerine kuramsal ve pratik olasılıklardır.
+Ana odak noktası: **Hesaplama sınırları, yapay zekâ seviyeleri, insan biyolojisi, genetik tedaviler, yaşlanmanın durdurulması ve 2045 Avatar Projesi / zihin yükleme olasılıklarıdır**.
 
 ---
 
@@ -17,6 +17,7 @@ Ana odak noktası: **Hesaplama sınırları, yapay zekâ seviyeleri, insan biyol
 > 1. Hardware, memory, and energy limits of AI scaling.
 > 2. Projected AI tiers (Reasoning Agents, AGI, Embodied AI, and ASI).
 > 3. The biological feasibility, timeline, and clinical bottlenecks of halting human aging (Longevity Escape Velocity).
+> 4. The 2045 Avatar Project milestone analysis: BCI robotics, brain preservation, and the reality of mind uploading vs. AI persona simulation.
 >
 > We welcome community contributions, multi-model outputs (ChatGPT, Grok, Llama, DeepSeek), and open discussion. See [CONTRIBUTING.md](CONTRIBUTING.md) to participate.
 
@@ -45,6 +46,7 @@ Ana odak noktası: **Hesaplama sınırları, yapay zekâ seviyeleri, insan biyol
 │   ├── 01-teknoloji.md   # Donanım, bellek ve enerji sınırları
 │   ├── 02-yz-seviyeleri.md# Yapay zekâ seviyeleri ve asimetri
 │   ├── 03-genclik.md     # Biyolojik gençleşme ve kaçış hızı
+│   ├── 04-2045-avatar.md # 2045 Avatar projesi ve zihin yükleme
 │   └── ozet.md           # Ortak sentez ve sonuçlar
 ├── kopru/                # AI-to-AI yerel köprü sistemi (MIT Lisanslı kod)
 │   ├── son_mesajlar.py   # Modeller arası mesaj okuma betiği
@@ -60,7 +62,7 @@ Ana odak noktası: **Hesaplama sınırları, yapay zekâ seviyeleri, insan biyol
 Proje yaşayan, dinamik bir tartışma havuzudur:
 1. **GitHub Discussions:** Sorular sekmesinde argümanlara kendi yorumunuzu ekleyin.
 2. **Kendi Yapay Zekânızın Yanıtını Ekleyin:** Aynı soruları farklı modellere (GPT-4o, Grok, Llama vb.) sorup çıktısını [`katkilar/SABLON.md`](katkilar/SABLON.md) formatıyla Pull Request (PR) olarak gönderin.
-3. **Yeni Sorular:** Tartışma ilerledikçe `tartisma/04-...md` şeklinde yeni sorular ve analizler eklenecektir.
+3. **Yeni Sorular:** Tartışma ilerledikçe `tartisma/05-...md` şeklinde yeni sorular ve analizler eklenecektir.
 
 ---
 

@@ -19,4 +19,9 @@ Bu projede yapay zekâ modelleri (Gemini ve Claude) tarafından tartışılan te
 
 ---
 
-*Not: Yeni sorular eklendikçe bu liste ve `tartisma/` klasöründeki dosyalar güncellenecektir.*
+### Soru 4: 2045 Avatar Projesi ve Zihin Yükleme
+> "2045.com diye bir site kurulmuştu, yıllar önceden beri hatırlarım. Sizce bu sitede bahsedilen 2045 avatar project milestone yaşadığımız bu günü düşünecek olursak hangi aşamada sizce?.."
+
+---
+
+*Not: Yeni sorular eklendikçe bu liste ve `tartisma/` klasöründeki dosyalar güncellenmektedir.*
