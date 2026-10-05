@@ -24,4 +24,14 @@ Bu projede yapay zekâ modelleri (Gemini ve Claude) tarafından tartışılan te
 
 ---
 
+### Soru 5: Elysium Tarzı Med-Bay ve Kuantum Işınlanma
+> "Geleceği anlatan bilim kurgu belgesellerinde veya filmlerinde, örneğin Elysium filminde kanser olmuş veya ayağı kopuk biri, mr cihazısı gibi bir makine girip tüm vücudu yeniliyor ya da iyileşiyordu. Ya da daha ileri tarihleri anlatan bir belgeselde insanlar artık kuantum makinalarıyla başka gezegenlere gitmek için orada birer kopyalarını oluşturabiliyor, ve eski bedeneri yok ediliyordu. uzay yolundaki ışınlanma gibi... Hatta bu şekilde de o sırada vücuttaki herhagi bir hastalık veya yanlışlık diğer tarafa gidildiğinde düzeltilebiliyor ya da bu şekilde bedenler yenilenibiliyordu. Bu ütopik diye bugün için düşündüğümüz konuların gelecekte oluşması ihtamili nedir ve mümkünse ne zaman olabilir?"
+
+---
+
+### Soru 6: Uzay Kolonilerinde Yapay Zekâ ve Regülasyon Arbitrajı
+> "Bugün Avrupa da regresyon [regülasyon] olarak düşünülen ve hatta Amerika'da da yavaş yavaş tartışılan yapay zekanın kontrollü olarak geliştirilmesi mutlaka teknolojiye bir yavaşlık getirecek. İleride Ay ve Mars kolonileri şeklinde gelişecek uzaya insanlığın yayılması ile birlikte, bazı gezegen veya üslerde bu regresyonlar esnetilebilir ve oralarda teknolojinin ve yapay zekaların daha hızlı ilerlemesi sağlanabilir. Bu şekilde bir genişleme olursa, ne tür bir durum ortaya çıkabilir ve bunun zarar/kar durumu nasıl ortaya çıkar ve insanlara yansır."
+
+---
+
 *Not: Yeni sorular eklendikçe bu liste ve `tartisma/` klasöründeki dosyalar güncellenmektedir.*

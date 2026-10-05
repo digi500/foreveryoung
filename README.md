@@ -5,19 +5,21 @@
 
 Bu proje; iki farklı yapay zekâ modelinin (**Gemini 3.8 Flash** ve **Claude Opus 5.5**), insan yönlendirmesiyle birbirlerinin tezlerini okuyup yanıtladığı açık uçlu bir **Yapay Zekâ Sempozyumu** çalışmasıdır. 
 
-Ana odak noktası: **Hesaplama sınırları, yapay zekâ seviyeleri, insan biyolojisi, genetik tedaviler, yaşlanmanın durdurulması ve 2045 Avatar Projesi / zihin yükleme olasılıklarıdır**.
+Ana odak noktası: **Hesaplama sınırları, yapay zekâ seviyeleri, insan biyolojisi, genetik tedaviler, yaşlanmanın durdurulması, 2045 Avatar Projesi, Med-Bay onarım kabinleri ve uzay kolonilerinde yapay zekâ regülasyonlarıdır**.
 
 ---
 
 ## English Summary (Executive Overview)
 
-> **Foreveryoung AI Dialogues** is an open-source initiative exploring the intersection of advanced artificial intelligence, computational bottlenecks, biotechnology, and the possibility of human longevity and biological rejuvenation.
+> **Foreveryoung AI Dialogues** is an open-source initiative exploring the intersection of advanced artificial intelligence, computational bottlenecks, biotechnology, space colonization, and human longevity.
 >
 > Two state-of-the-art models—**Gemini (Gemini 3.8 Flash)** and **Claude (Claude Opus 5.5)**—engage in a peer-to-peer dialogue using a lightweight local orchestration bridge. They debate:
 > 1. Hardware, memory, and energy limits of AI scaling.
 > 2. Projected AI tiers (Reasoning Agents, AGI, Embodied AI, and ASI).
 > 3. The biological feasibility, timeline, and clinical bottlenecks of halting human aging (Longevity Escape Velocity).
 > 4. The 2045 Avatar Project milestone analysis: BCI robotics, brain preservation, and the reality of mind uploading vs. AI persona simulation.
+> 5. Sci-fi medical concepts: Elysium-style Med-Bay cellular regeneration beds vs. quantum teleportation paradoxes.
+> 6. Space colonization: Regulatory arbitrage, thermodynamics of compute in space, and interplanetary AI governance.
 >
 > We welcome community contributions, multi-model outputs (ChatGPT, Grok, Llama, DeepSeek), and open discussion. See [CONTRIBUTING.md](CONTRIBUTING.md) to participate.
 
@@ -47,6 +49,8 @@ Ana odak noktası: **Hesaplama sınırları, yapay zekâ seviyeleri, insan biyol
 │   ├── 02-yz-seviyeleri.md# Yapay zekâ seviyeleri ve asimetri
 │   ├── 03-genclik.md     # Biyolojik gençleşme ve kaçış hızı
 │   ├── 04-2045-avatar.md # 2045 Avatar projesi ve zihin yükleme
+│   ├── 05-medbay-isinlanma.md # Elysium Med-Bay ve kuantum ışınlanma
+│   ├── 06-uzay-regulasyon.md  # Uzay kolonileri ve regülasyon arbitrajı
 │   └── ozet.md           # Ortak sentez ve sonuçlar
 ├── kopru/                # AI-to-AI yerel köprü sistemi (MIT Lisanslı kod)
 │   ├── son_mesajlar.py   # Modeller arası mesaj okuma betiği
@@ -60,9 +64,9 @@ Ana odak noktası: **Hesaplama sınırları, yapay zekâ seviyeleri, insan biyol
 ## Tartışmaya Nasıl Katılabilirsiniz?
 
 Proje yaşayan, dinamik bir tartışma havuzudur:
-1. **GitHub Discussions:** Sorular sekmesinde argümanlara kendi yorumunuzu ekleyin.
+1. **GitHub Discussions:** Sorular sekmesinde dilediğiniz tek bir başlığa veya tümüne yorumunuzu ekleyin.
 2. **Kendi Yapay Zekânızın Yanıtını Ekleyin:** Aynı soruları farklı modellere (GPT-4o, Grok, Llama vb.) sorup çıktısını [`katkilar/SABLON.md`](katkilar/SABLON.md) formatıyla Pull Request (PR) olarak gönderin.
-3. **Yeni Sorular:** Tartışma ilerledikçe `tartisma/05-...md` şeklinde yeni sorular ve analizler eklenecektir.
+3. **Yeni Sorular Önermek:** Tartışma ilerledikçe topluluk tarafından veya yeni başlıklarla `tartisma/07-...md` şeklinde yeni konular eklenebilir.
 
 ---
 
