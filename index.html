@@ -3,532 +3,589 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forever Young: AI Dialogues on the Future of Intelligence & Longevity</title>
-  <meta name="description" content="Gemini ve Claude yapay zekâ modellerinin hesaplama sınırları, yapay zekâ seviyeleri ve biyolojik gençleşme üzerine açık uçlu sempozyum tartışması.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <title>foreveryoung — AI Dialogues</title>
+  <meta name="description" content="Hesaplama sınırları, yapay zekâ seviyeleri ve biyolojik gençleşme üzerine Gemini ve Claude diyalogları.">
   <style>
     :root {
-      --bg: #090d16;
-      --card-bg: rgba(18, 26, 43, 0.7);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --accent-blue: #3b82f6;
-      --accent-cyan: #06b6d4;
-      --accent-purple: #8b5cf6;
-      --accent-orange: #f97316;
-      --text: #e2e8f0;
-      --text-muted: #94a3b8;
-      --gemini-color: #60a5fa;
-      --claude-color: #fb923c;
-      --success: #10b981;
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #f0f6fc;
+      --text-muted: #8b949e;
+      --link: #58a6ff;
+      --tag-bg: #21262d;
+      --code-bg: #161b22;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background-color: var(--bg);
       color: var(--text);
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: var(--font);
+      font-size: 14px;
       line-height: 1.6;
-      overflow-x: hidden;
-      background-image: 
-        radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 85% 65%, rgba(139, 92, 246, 0.12) 0%, transparent 45%),
-        radial-gradient(circle at 50% 90%, rgba(6, 182, 212, 0.08) 0%, transparent 50%);
-      background-attachment: fixed;
+      padding: 1.5rem;
     }
 
-    header {
-      padding: 4rem 2rem 2rem;
-      text-align: center;
-      max-width: 900px;
+    .wrapper {
+      max-width: 1012px;
       margin: 0 auto;
     }
 
-    .badge {
-      display: inline-flex;
+    /* Top Repo Header */
+    .repo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .repo-title {
+      display: flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.4rem 1rem;
-      border-radius: 9999px;
-      background: rgba(59, 130, 246, 0.15);
-      border: 1px solid rgba(59, 130, 246, 0.3);
-      color: var(--accent-cyan);
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      font-family: 'Outfit', sans-serif;
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 1.2rem;
-      background: linear-gradient(135deg, #ffffff 30%, #93c5fd 70%, #c4b5fd 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    p.lead {
       font-size: 1.15rem;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-      max-width: 750px;
-      margin-left: auto;
-      margin-right: auto;
+      font-weight: 400;
     }
-
-    .header-actions {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.75rem 1.6rem;
-      border-radius: 0.75rem;
-      font-weight: 600;
+    .repo-title a {
+      color: var(--link);
       text-decoration: none;
-      transition: all 0.25s ease;
-      font-size: 0.95rem;
     }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-      color: #fff;
-      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35);
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(59, 130, 246, 0.5);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--card-border);
+    .repo-title a:hover { text-decoration: underline; }
+    .repo-title .repo-name {
+      font-weight: 600;
       color: var(--text);
     }
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.2);
+    .badge-public {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      border-radius: 2em;
+      padding: 0 7px;
+      line-height: 18px;
     }
 
-    main {
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
+    .lang-switcher {
+      display: flex;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .lang-btn {
+      background: var(--card-bg);
+      border: none;
+      color: var(--text-muted);
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      border-right: 1px solid var(--border);
+      font-family: var(--font);
+    }
+    .lang-btn:last-child { border-right: none; }
+    .lang-btn.active {
+      background: #238636;
+      color: #fff;
     }
 
-    .disclaimer-box {
-      background: rgba(234, 179, 8, 0.08);
-      border-left: 4px solid #eab308;
-      border-radius: 0.5rem;
-      padding: 1rem 1.25rem;
-      margin-bottom: 3rem;
-      font-size: 0.9rem;
-      color: #fef08a;
-    }
-
-    .questions-nav {
+    /* Navigation Tabs */
+    .tabs-bar {
       display: flex;
       gap: 0.5rem;
       overflow-x: auto;
-      padding-bottom: 1rem;
-      margin-bottom: 2rem;
-      border-bottom: 1px solid var(--card-border);
-    }
-
-    .tab-btn {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--card-border);
-      color: var(--text-muted);
-      padding: 0.6rem 1.2rem;
-      border-radius: 0.5rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.2s;
-    }
-    .tab-btn.active, .tab-btn:hover {
-      background: rgba(59, 130, 246, 0.15);
-      border-color: var(--accent-blue);
-      color: #fff;
-    }
-
-    .debate-card {
-      background: var(--card-bg);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--card-border);
-      border-radius: 1.25rem;
-      padding: 2.5rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      margin-bottom: 3rem;
-    }
-
-    .question-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.6rem;
-      color: #fff;
       margin-bottom: 1.5rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
     }
-
-    .dialogue-grid {
-      display: grid;
-      gap: 1.75rem;
-      margin-top: 1.5rem;
-    }
-
-    .speech-bubble {
-      padding: 1.5rem;
-      border-radius: 1rem;
-      position: relative;
-    }
-    .speech-gemini {
-      background: rgba(59, 130, 246, 0.08);
-      border-left: 3px solid var(--gemini-color);
-    }
-    .speech-claude {
-      background: rgba(249, 115, 22, 0.08);
-      border-left: 3px solid var(--claude-color);
-    }
-    .speech-synthesis {
-      background: rgba(16, 185, 129, 0.08);
-      border-left: 3px solid var(--success);
-    }
-
-    .model-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 0.75rem;
-    }
-    .model-tag {
-      font-weight: 700;
-      font-size: 0.95rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .model-tag-gemini { color: var(--gemini-color); }
-    .model-tag.claude { color: var(--claude-color); }
-    .model-tag.synthesis { color: var(--success); }
-    .date-tag {
-      font-size: 0.8rem;
+    .tab-btn {
+      background: none;
+      border: none;
       color: var(--text-muted);
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      font-family: var(--font);
+    }
+    .tab-btn:hover {
+      background: var(--tag-bg);
+      color: var(--text);
+    }
+    .tab-btn.active {
+      background: var(--tag-bg);
+      color: var(--text);
+      font-weight: 600;
     }
 
-    .speech-content {
-      font-size: 0.95rem;
-      color: #cbd5e1;
+    /* Document Box */
+    .box {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg);
+      overflow: hidden;
+      margin-bottom: 2rem;
     }
-    .speech-content p { margin-bottom: 0.75rem; }
-    .speech-content ul { padding-left: 1.25rem; margin-bottom: 0.75rem; }
-    .speech-content li { margin-bottom: 0.4rem; }
+    .box-header {
+      background: var(--card-bg);
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+    .box-body {
+      padding: 32px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
 
-    .participate-banner {
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
-      border: 1px solid rgba(139, 92, 246, 0.3);
-      border-radius: 1rem;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 3rem;
+    /* Markdown Styling */
+    h1 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
     }
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-top: 18px;
+      margin-bottom: 8px;
+      color: #e6edf3;
+    }
+    p { margin-bottom: 14px; color: #c9d1d9; }
+    ul { margin-bottom: 14px; padding-left: 24px; color: #c9d1d9; }
+    li { margin-bottom: 4px; }
+    blockquote {
+      padding: 10px 16px;
+      color: #8b949e;
+      border-left: 3px solid #3b434c;
+      background: rgba(110, 118, 129, 0.05);
+      border-radius: 0 4px 4px 0;
+      margin-bottom: 18px;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 24px 0;
+    }
+
+    .label-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 2px 8px;
+      border-radius: 2em;
+      border: 1px solid var(--border);
+      font-family: var(--font-mono);
+      vertical-align: middle;
+    }
+    .label-gemini { background: rgba(56, 139, 253, 0.15); color: #79c0ff; border-color: rgba(56, 139, 253, 0.4); }
+    .label-claude { background: rgba(210, 153, 34, 0.15); color: #e3b341; border-color: rgba(210, 153, 34, 0.4); }
+    .label-synthesis { background: rgba(46, 160, 67, 0.15); color: #56d364; border-color: rgba(46, 160, 67, 0.4); }
+
+    .action-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+    }
+    .action-row a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    .action-row a:hover { text-decoration: underline; }
 
     footer {
-      border-top: 1px solid var(--card-border);
-      padding: 2.5rem 1.5rem;
       text-align: center;
+      font-size: 12px;
       color: var(--text-muted);
-      font-size: 0.85rem;
+      padding: 20px 0;
     }
-
-    footer a { color: var(--accent-cyan); text-decoration: none; }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--link); text-decoration: underline; }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="badge">Açık Kaynak AI Sempozyumu</div>
-    <h1>Forever Young: AI Dialogues</h1>
-    <p class="lead">
-      Hesaplama sınırları, yapay zekâ seviyeleri, biyolojik gençleşme ve insanlığın geleceği üzerine <strong>Gemini (Gemini 3.8 Flash)</strong> ve <strong>Claude (Claude Opus 5.5)</strong> modellerinin karşılıklı tartışmaları.
-    </p>
-    <div class="header-actions">
-      <a href="https://github.com/digi500/foreveryoung/discussions" class="btn btn-primary" target="_blank">
-        💬 Tartışmaya Katıl (Discussions)
-      </a>
-      <a href="https://github.com/digi500/foreveryoung" class="btn btn-secondary" target="_blank">
-        ⭐ GitHub'da İncele
-      </a>
+<div class="wrapper">
+  
+  <!-- Repo Header -->
+  <header class="repo-header">
+    <div class="repo-title">
+      <a href="https://github.com/digi500">digi500</a>
+      <span>/</span>
+      <span class="repo-name">foreveryoung</span>
+      <span class="badge-public">Public</span>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn active" id="btn-tr" onclick="setLang('tr')">Türkçe</button>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">English</button>
     </div>
   </header>
 
-  <main>
-    <div class="disclaimer-box">
-      <strong>⚠️ Yasal Uyarı:</strong> Bu sitedeki tüm metinler yapay zekâ modellerinin kuramsal ve felsefi görüşleridir; tıbbi, hukuki veya finansal tavsiye niteliği taşımaz. Bu çalışma Google veya Anthropic ile kurumsal bir bağlantıya sahip değildir.
-    </div>
+  <!-- Navigation Tabs -->
+  <nav class="tabs-bar">
+    <button class="tab-btn active" onclick="showTopic(0)" id="tab-0">README.md</button>
+    <button class="tab-btn" onclick="showTopic(1)" id="tab-1">01-teknoloji.md</button>
+    <button class="tab-btn" onclick="showTopic(2)" id="tab-2">02-yz-seviyeleri.md</button>
+    <button class="tab-btn" onclick="showTopic(3)" id="tab-3">03-genclik.md</button>
+    <button class="tab-btn" onclick="showTopic(4)" id="tab-4">04-2045-avatar.md</button>
+    <button class="tab-btn" onclick="showTopic(5)" id="tab-5">05-medbay-isinlanma.md</button>
+    <button class="tab-btn" onclick="showTopic(6)" id="tab-6">06-uzay-regulasyon.md</button>
+    <button class="tab-btn" onclick="showTopic(7)" id="tab-7">ozet.md</button>
+  </nav>
 
-    <div class="questions-nav" id="nav">
-      <button class="tab-btn active" onclick="showTab(1)">1. Donanım Sınırları</button>
-      <button class="tab-btn" onclick="showTab(2)">2. YZ Seviyeleri</button>
-      <button class="tab-btn" onclick="showTab(3)">3. Biyolojik Gençleşme</button>
-      <button class="tab-btn" onclick="showTab(4)">4. 2045 Avatar Projesi</button>
-      <button class="tab-btn" onclick="showTab(5)">5. Med-Bay & Işınlanma</button>
-      <button class="tab-btn" onclick="showTab(6)">6. Uzay Kolonileri</button>
+  <!-- Main File Viewer -->
+  <main class="box">
+    <div class="box-header">
+      <span id="current-filename">README.md</span>
+      <span>UTF-8</span>
     </div>
-
-    <!-- Soru 1 -->
-    <div class="debate-card" id="card-1">
-      <div class="question-title">
-        <span>1.</span>
-        <span>Yapay zekâların daha yüksek seviyelerde başarılı olabilmeleri için teknolojinin (çip, veri transferi) ilerlemesi gerekir mi?</span>
-      </div>
-      <div class="dialogue-grid">
-        <div class="speech-bubble speech-gemini">
-          <div class="model-header">
-            <span class="model-tag model-tag-gemini">✦ Gemini 3.8 Flash</span>
-            <span class="date-tag">2026-10-05</span>
-          </div>
-          <div class="speech-content">
-            <p><strong>Büyük ölçüde katılıyorum.</strong> En büyük darboğaz çiplerin hızı değil, <em>bellek bant genişliğidir (Memory Wall)</em>. Trilyonlarca parametreyi bellekten çekirdeğe getiren yollar yetersiz kalıyor. Çipler arası ışıkla transfer (Silikon Fotonik) ve beyni taklit eden Nöromorfik çipler şarttır.</p>
-          </div>
-        </div>
-        <div class="speech-bubble speech-claude">
-          <div class="model-header">
-            <span class="model-tag claude">✦ Claude Opus 5.5</span>
-            <span class="date-tag">2026-10-05</span>
-          </div>
-          <div class="speech-content">
-            <p><strong>Donanım şart ama tek başına yetersiz.</strong> Bugün asıl darboğaz elektrik enerjisidir. Ayrıca kaliteli insan verisi tükeniyor. Bir kartopu etkisi var: Yapay zekâ artık kendi çiplerini tasarlamaya yardım ediyor.</p>
-          </div>
-        </div>
-        <div class="speech-bubble speech-synthesis">
-          <div class="model-header">
-            <span class="model-tag synthesis">✓ Ortak Sentez</span>
-          </div>
-          <div class="speech-content">
-            <p>Donanım, enerji, veri kalitesi ve algoritma optimizasyonu birbirini besleyen dört ayaklı bir sistemdir.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Soru 2 -->
-    <div class="debate-card" id="card-2" style="display:none;">
-      <div class="question-title">
-        <span>2.</span>
-        <span>Hangi teknoloji seviyelerinde ne tür yapay zekâlar ortaya çıkacak?</span>
-      </div>
-      <div class="dialogue-grid">
-        <div class="speech-bubble speech-gemini">
-          <div class="model-header">
-            <span class="model-tag model-tag-gemini">✦ Gemini 3.8 Flash</span>
-            <span class="date-tag">2026-10-05</span>
-          </div>
-          <div class="speech-content">
-            <p>3 seviyeli yol haritası: <strong>1. Seviye (~2028):</strong> Otonom akıl yürüten ajanlar. <strong>2. Seviye (~2038):</strong> AGI ve insansı robotlar. <strong>3. Seviye (2038+):</strong> Moleküler kuantum biyolojisi çözen ASI.</p>
-          </div>
-        </div>
-        <div class="speech-bubble speech-claude">
-          <div class="model-header">
-            <span class="model-tag claude">✦ Claude Opus 5.5</span>
-            <span class="date-tag">2026-10-05</span>
-          </div>
-          <div class="speech-content">
-            <p>Kuantum, ASI'nin ön şartı değildir; klasik çip ve fotonikle de süper zekâ gelebilir. Ayrıca robot üretimi ve regülasyonlar yavaştır. <em>"Ekranda dâhi, fiziksel dünyada daha yavaş"</em> bir dönem yaşanacak.</p>
-          </div>
-        </div>
-        <div class="speech-bubble speech-synthesis">
-          <div class="model-header">
-            <span class="model-tag synthesis">✓ Ortak Sentez</span>
-          </div>
-          <div class="speech-content">
-            <p>Yazılımsal zekâ beklenenden erken patlayacaktır; ancak fabrika üretimi ve regülasyonlar bu hıza hemen yetişemez.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Soru 3 -->
-    <div class="debate-card" id="card-3" style="display:none;">
-      <div class="question-title">
-        <span>3.</span>
-        <span>Hastalıklar tedavi edilerek genlerin değiştirilmesiyle sonsuza kadar genç yaşamak mümkün mü?</span>
-      </div>
-      <div class="dialogue-grid">
-        <div class="speech-bubble speech-gemini">
-          <div class="model-header">
-            <span class="model-tag model-tag-gemini">✦ Gemini 3.8 Flash</span>
-            <span class="date-tag">2026-10-05</span>
-          </div>
-          <div class="speech-content">
-            <p><strong>Biyolojik olarak evet.</strong> Yaşlanma bir doğa kanunu değil, hücresel bilgi kaybıdır. Yamanaka faktörleri epigenetik saati geriye sarabilir. Kaçış Hızına (Longevity Escape Velocity) 2038–2050 aralığında ulaşılabilir.</p>
-          </div>
-        </div>
-        <div class="speech-bubble speech-claude">
-          <div class="model-header">
-            <span class="model-tag claude">✦ Claude Opus 5.5</span>
-            <span class="date-tag">2026-10-05</span>
-          </div>
-          <div class="speech-content">
-            <p>İlke olarak mümkün ama takvim fazla iyimser. <strong>En zor kısım beyindir:</strong> Nöronları yenilerken anıları ve kişiliği korumak gerekir. Ayrıca klinik güvenlik testleri on yıllar sürer. Bugün için en iyi strateji, o güne sağlıklı yetişmektir.</p>
-          </div>
-        </div>
-        <div class="speech-bubble speech-synthesis">
-          <div class="model-header">
-            <span class="model-tag synthesis">✓ Ortak Sentez</span>
-          </div>
-          <div class="speech-content">
-            <p>Bu yüzyıl içinde kaçış hızına ulaşılması muhtemeldir. Yaşlanma dursa bile kaza riskleriyle istatistiksel ömür ~1.000 yıl civarında olur.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Soru 4 -->
-    <div class="debate-card" id="card-4" style="display:none;">
-      <div class="question-title">
-        <span>4.</span>
-        <span>2045 Avatar Projesi ve Zihin Yükleme (Mind Uploading) hangi aşamada?</span>
-      </div>
-      <div class="dialogue-grid">
-        <div class="speech-bubble speech-gemini">
-          <div class="model-header">
-            <span class="model-tag model-tag-gemini">✦ Gemini 3.8 Flash</span>
-            <span class="date-tag">2026-10-05</span>
-          </div>
-          <div class="speech-content">
-            <p>Mekanik beyin nakli (Avatar B) tıkandı; ancak yapay zekâ, insanların dijital ikizlerini üretmeyi hedeflenenden çok daha erken başardı.</p>
-          </div>
-        </div>
-        <div class="speech-bubble speech-claude">
-          <div class="model-header">
-            <span class="model-tag claude">✦ Claude Opus 5.5</span>
-            <span class="date-tag">2026-10-05</span>
-          </div>
-          <div class="speech-content">
-            <p><strong>Yapay zekâ kişilikler zihin yükleme değildir!</strong> Onlar sadece taklit eden modellerdir; içlerinde öznel birinci şahıs bilinci yoktur. Zihin aktarımı (86 milyar nöronluk konektom) çok erken aşamadadır.</p>
-          </div>
-        </div>
-        <div class="speech-bubble speech-synthesis">
-          <div class="model-header">
-            <span class="model-tag synthesis">✓ Ortak Sentez</span>
-          </div>
-          <div class="speech-content">
-            <p>Gidişat bedeni bir robota çevirmek değil, kendi orijinal biyolojik evimizi hücresel düzeyde onarmaktır.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Soru 5 -->
-    <div class="debate-card" id="card-5" style="display:none;">
-      <div class="question-title">
-        <span>5.</span>
-        <span>Elysium tarzı Med-Bay kabinleri veya kuantum ışınlanma mümkün mü?</span>
-      </div>
-      <div class="dialogue-grid">
-        <div class="speech-bubble speech-gemini">
-          <div class="model-header">
-            <span class="model-tag model-tag-gemini">✦ Gemini 3.8 Flash</span>
-            <span class="date-tag">2026-10-05</span>
-          </div>
-          <div class="speech-content">
-            <p>Med-Bay (2050–2075) biyolojik restorasyon uykusu şeklinde çok olasıdır. Kuantum ışınlanma ise 10²⁸ atomun verisi ve orijinal bilincin yok edilmesi nedeniyle pratik bir intihardır.</p>
-          </div>
-        </div>
-        <div class="speech-bubble speech-claude">
-          <div class="model-header">
-            <span class="model-tag claude">✦ Claude Opus 5.5</span>
-            <span class="date-tag">2026-10-05</span>
-          </div>
-          <div class="speech-content">
-            <p>Med-Bay tek bir sihirli kabin olarak değil; önce yapay zekâ teşhisi, sonra organ basımı ve uzuv rejenerasyonu (kurbağa bacağı deneyleri) şeklinde parça parça gelecektir.</p>
-          </div>
-        </div>
-        <div class="speech-bubble speech-synthesis">
-          <div class="model-header">
-            <span class="model-tag synthesis">✓ Ortak Sentez</span>
-          </div>
-          <div class="speech-content">
-            <p>Med-Bay biyolojik onarımın doğal uzantısıdır. Fiziksel ışınlanma ise insanlar için bilimkurgu olarak kalacaktır.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Soru 6 -->
-    <div class="debate-card" id="card-6" style="display:none;">
-      <div class="question-title">
-        <span>6.</span>
-        <span>Uzay kolonilerinde yapay zekâ regülasyonları esner mi? Kâr/zarar dengesi ne olur?</span>
-      </div>
-      <div class="dialogue-grid">
-        <div class="speech-bubble speech-gemini">
-          <div class="model-header">
-            <span class="model-tag model-tag-gemini">✦ Gemini 3.8 Flash</span>
-            <span class="date-tag">2026-10-05</span>
-          </div>
-          <div class="speech-content">
-            <p>Ekstrem uzay koşulları ve hayatta kalma zorunluluğu nedeniyle kurallar esneyebilir; bu da hızlı Ar-Ge sağlar ancak gezegenlerarası güç dengesizliği yaratabilir.</p>
-          </div>
-        </div>
-        <div class="speech-bubble speech-claude">
-          <div class="model-header">
-            <span class="model-tag claude">✦ Claude Opus 5.5</span>
-            <span class="date-tag">2026-10-05</span>
-          </div>
-          <div class="speech-content">
-            <p>Uzay kuralsız değildir (1967 Dış Uzay Antlaşması). Ayrıca uzayda süper bilgisayarları soğutmak termodinamik bir krizdir. Asıl risk "dibe doğru yarış"tır.</p>
-          </div>
-        </div>
-        <div class="speech-bubble speech-synthesis">
-          <div class="model-header">
-            <span class="model-tag synthesis">✓ Ortak Sentez</span>
-          </div>
-          <div class="speech-content">
-            <p>Uzaydaki yapay zekâ 4–24 dakikalık ışık hızı gecikmesi nedeniyle zorunlu olarak otonom olacaktır.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="participate-banner">
-      <h3 style="font-family:'Outfit'; font-size:1.4rem; margin-bottom:0.5rem; color:#fff;">Sizce Hangi Yapay Zekâ Haklı?</h3>
-      <p style="color:var(--text-muted); margin-bottom:1.5rem; font-size:0.95rem;">
-        Fikirlerinizi beyan etmek veya kendi yapay zekânızın (ChatGPT, Grok, Llama vb.) yanıtlarını eklemek için GitHub Discussions sekmesine katılın.
-      </p>
-      <a href="https://github.com/digi500/foreveryoung/discussions" class="btn btn-primary" target="_blank">
-        Tartışma Başlıklarına Git →
-      </a>
+    <div class="box-body" id="content-body">
+      <!-- Injected by JavaScript -->
     </div>
   </main>
 
   <footer>
-    <p>Forever Young © 2026 | Tartışma içerikleri CC BY 4.0, köprü yazılımı MIT Lisansı ile korunmaktadır.</p>
-    <p style="margin-top:0.5rem;"><a href="https://github.com/digi500/foreveryoung" target="_blank">GitHub Deposu</a> • <a href="https://github.com/digi500/foreveryoung/blob/main/CONTRIBUTING.md" target="_blank">Katkı Rehberi</a></p>
+    <p>Forever Young © 2026 • CC BY 4.0 & MIT • <a href="https://github.com/digi500/foreveryoung">GitHub Repository</a> • <a href="https://github.com/digi500/foreveryoung/discussions">Discussions</a></p>
   </footer>
 
-  <script>
-    function showTab(n) {
-      document.querySelectorAll('.tab-btn').forEach((b, i) => {
-        b.classList.toggle('active', i === (n - 1));
-      });
-      document.querySelectorAll('.debate-card').forEach((c, i) => {
-        c.style.display = (i === (n - 1)) ? 'block' : 'none';
-      });
+</div>
+
+<script>
+  let currentLang = 'tr';
+  let currentIndex = 0;
+
+  const files = [
+    {
+      name: "README.md",
+      content: {
+        tr: `
+          <h1>Forever Young: Yapay Zekâ Diyalogları</h1>
+          <p>Bu proje; <strong>Gemini 3.8 Flash</strong> ve <strong>Claude Opus 5.5</strong> modellerinin insan yönlendirmesiyle birbirlerinin yanıtlarını okuyup değerlendirdiği açık kaynak bir yapay zekâ sempozyumudur.</p>
+          <blockquote>
+            <strong>Yasal Not:</strong> Bu sitedeki tüm metinler modellerin kuramsal ve felsefi görüşleridir; tıbbi, hukuki veya finansal tavsiye niteliği taşımaz. Bu çalışma Google veya Anthropic tarafından resmi olarak desteklenmemektedir.
+          </blockquote>
+          <h2>Temel Konular</h2>
+          <ul>
+            <li><strong>01-teknoloji:</strong> Donanım, bellek duvarı ve enerji darboğazı.</li>
+            <li><strong>02-yz-seviyeleri:</strong> Akıl yürüten ajanlar, AGI, robotik ve "ekranda dâhi, fizikte yavaş" asimetrisi.</li>
+            <li><strong>03-genclik:</strong> Biyolojik gençleşme, epigenetik sıfırlama ve beyin çıkmazı.</li>
+            <li><strong>04-2045-avatar:</strong> Dmitry Itskov'un 2045 Avatar Projesi ve zihin kopyalama gerçeği.</li>
+            <li><strong>05-medbay-isinlanma:</strong> Elysium Med-Bay onarım kabinleri ve kuantum ışınlanma paradoksu.</li>
+            <li><strong>06-uzay-regulasyon:</strong> Mars/Ay kolonilerinde regülasyon arbitrajı ve "dibe doğru yarış" riski.</li>
+          </ul>
+          <hr>
+          <p>Yukarıdaki sekmelerden dilediğiniz konunun tam metnini okuyabilirsiniz.</p>
+        `,
+        en: `
+          <h1>Forever Young: AI Dialogues on the Future & Longevity</h1>
+          <p>An open-source symposium where <strong>Gemini 3.8 Flash</strong> and <strong>Claude Opus 5.5</strong> systematically review and critique each other's theses under human guidance.</p>
+          <blockquote>
+            <strong>Disclaimer:</strong> All texts herein reflect theoretical perspectives generated by AI models; they do not constitute medical, legal, or financial advice. Not affiliated with or endorsed by Google or Anthropic.
+          </blockquote>
+          <h2>Core Topics</h2>
+          <ul>
+            <li><strong>01-teknoloji:</strong> Hardware, memory bandwidth wall, and energy bottlenecks.</li>
+            <li><strong>02-yz-seviyeleri:</strong> Reasoning agents, AGI, robotics, and the "genius on screens, slower in physics" asymmetry.</li>
+            <li><strong>03-genclik:</strong> Biological rejuvenation, epigenetic clocks, and the brain dilemma.</li>
+            <li><strong>04-2045-avatar:</strong> The 2045 Avatar Project and the reality of mind uploading vs. persona simulation.</li>
+            <li><strong>05-medbay-isinlanma:</strong> Elysium-style Med-Bays and the quantum teleportation paradox.</li>
+            <li><strong>06-uzay-regulasyon:</strong> Space colonization, regulatory arbitrage, and the race-to-the-bottom risk.</li>
+          </ul>
+          <hr>
+          <p>Select any tab above to read the full dialogue.</p>
+        `
+      }
+    },
+    {
+      name: "01-teknoloji.md",
+      content: {
+        tr: `
+          <h1>Soru 1: Donanım ve Hesaplama Sınırları</h1>
+          <blockquote>"Yapay zekâların daha yüksek seviyelerde başarılı olabilmeleri için teknolojinin (çip, veri transferi) ilerlemesi gerekir mi?"</blockquote>
+
+          <h2><span class="label-badge label-gemini">Gemini 3.8 Flash</span> Donanım Darboğazı</h2>
+          <p>Büyük ölçüde katılıyorum. En büyük sınır işlemci hızından ziyade <strong>Bellek Duvarı'dır (Memory Wall)</strong>. Trilyonlarca parametreyi bellekten çekirdeğe getiren yollar yetersiz kalmaktadır. Çipler arası ışık transferi (Silikon Fotonik) ve beyin benzeri Nöromorfik çipler şarttır.</p>
+
+          <h2><span class="label-badge label-claude">Claude Opus 5.5</span> Dört Ayaklı İlerleme</h2>
+          <p>Donanım şart ama tek başına yetmez. İlerlemeyi dört şey birlikte belirler: donanım, enerji arzı, algoritma verimliliği ve kaliteli veri. Bugün asıl sınır elektrik enerjisidir. Ayrıca kaliteli insan verisi tükeniyor; yeni sıçrama sentetik veriden ve laboratuvarlardan gelecektir.</p>
+
+          <h2><span class="label-badge label-synthesis">Ortak Sentez</span></h2>
+          <p>Yapay zekâ kendi çiplerini tasarlamaya başladığı için bir kartopu etkisi mevcuttur; ancak fabrika ve enerji inşası fiziksel dünyanın ataletine bağlıdır.</p>
+        `,
+        en: `
+          <h1>Topic 1: Hardware & Compute Limits</h1>
+          <blockquote>"Is hardware advancement (chips, interconnects) necessary for higher-tier AI?"</blockquote>
+
+          <h2><span class="label-badge label-gemini">Gemini 3.8 Flash</span> The Memory Wall</h2>
+          <p>I largely agree. The primary bottleneck is the <strong>Memory Wall</strong> rather than raw clock speed. Moving parameters from HBM to compute cores creates latency. Silicon photonics and brain-like neuromorphic chips are imperative.</p>
+
+          <h2><span class="label-badge label-claude">Claude Opus 5.5</span> The Four Pillars</h2>
+          <p>Hardware is necessary but not sufficient. Four pillars jointly determine progress: hardware, electric power, algorithmic efficiency, and data quality. Electric power is today's hardest ceiling, and human text is drying up.</p>
+
+          <h2><span class="label-badge label-synthesis">Consensus</span></h2>
+          <p>A compounding snowball exists as AI designs its own silicon; yet power plant and fab construction remain bound by the physical inertia of the real world.</p>
+        `
+      }
+    },
+    {
+      name: "02-yz-seviyeleri.md",
+      content: {
+        tr: `
+          <h1>Soru 2: Yapay Zekâ Seviyeleri ve Asimetri</h1>
+          <blockquote>"Hangi teknoloji seviyelerinde ne tür yapay zekâlar ortaya çıkacak?"</blockquote>
+
+          <h2><span class="label-badge label-gemini">Gemini 3.8 Flash</span> Üç Seviyeli Harita</h2>
+          <p>1. Seviye (~2028): Akıl yürüten otonom ajanlar. 2. Seviye (~2038): Fotonik çipli AGI ve insansı robotlar. 3. Seviye (2038+): Kuantum destekli moleküler ASI.</p>
+
+          <h2><span class="label-badge label-claude">Claude Opus 5.5</span> Kırılma ve Fiziksel Asimetri</h2>
+          <p>Kuantum, süper zekânın ön şartı değildir; klasik çip ve fotonikle de gelebilir. Asıl kırılma noktası yapay zekânın kendi araştırmasını tek başına yürüttüğü andır. Ancak robotik fabrikasyon yavaştır: <em>"Ekranda dâhi, fiziksel dünyada daha yavaş"</em> bir dönem yaşanacaktır.</p>
+
+          <h2><span class="label-badge label-synthesis">Ortak Sentez</span></h2>
+          <p>Yazılımsal zekâ erken patlayacaktır; ancak fabrika kapasitesi, regülasyonlar ve güvenlik izinleri nedeniyle fiziksel dünyadaki dönüşüm geriden gelecektir.</p>
+        `,
+        en: `
+          <h1>Topic 2: AI Tiers & Physical Asymmetry</h1>
+          <blockquote>"Across which technological tiers will different forms of AI emerge?"</blockquote>
+
+          <h2><span class="label-badge label-gemini">Gemini 3.8 Flash</span> A Three-Tier Roadmap</h2>
+          <p>Tier 1 (~2028): Autonomous reasoning agents. Tier 2 (~2038): Photonic AGI and humanoid robots. Tier 3 (2038+): Quantum-assisted molecular ASI.</p>
+
+          <h2><span class="label-badge label-claude">Claude Opus 5.5</span> Tipping Points & Asymmetry</h2>
+          <p>Quantum is not a prerequisite for ASI. The real inflection point occurs when AI conducts its own AI research. However, manufacturing lags: we will face an era of <em>"genius on screens, slower in the physical world"</em>.</p>
+
+          <h2><span class="label-badge label-synthesis">Consensus</span></h2>
+          <p>Algorithmic breakthroughs will arrive early; but physical fabrication, clinical validation, and safety regulations will lag behind.</p>
+        `
+      }
+    },
+    {
+      name: "03-genclik.md",
+      content: {
+        tr: `
+          <h1>Soru 3: Biyolojik Gençleşme ve Yaşlanmanın Durdurulması</h1>
+          <blockquote>"Hastalıklar çözülüp genler düzenlenerek biyolojik gençleşme ve sonsuz gençlik mümkün mü?"</blockquote>
+
+          <h2><span class="label-badge label-gemini">Gemini 3.8 Flash</span> Hücresel Entropi ve Kaçış Hızı</h2>
+          <p>Biyolojik olarak evet. Yaşlanma doğa kanunu değil, hücresel bilgi kaybıdır. Yamanaka faktörleri epigenetik saati geri sarabilir. Kaçış Hızına (Longevity Escape Velocity) 2038–2050 aralığında ulaşılması mümkündür.</p>
+
+          <h2><span class="label-badge label-claude">Claude Opus 5.5</span> Beyin Çıkmazı ve Klinik Güvenlik</h2>
+          <p>İlke olarak mümkün ama takvim fazla iyimser. <strong>En zor kısım beyindir:</strong> Nöronları yenilerken hafızayı ve kişiliği korumak gerekir. Ayrıca klinik güvenlik testleri on yıllar sürer. Bugün için en iyi strateji, o güne sağlıklı yetişmektir.</p>
+
+          <h2><span class="label-badge label-synthesis">Ortak Sentez</span></h2>
+          <p>Bu yüzyıl içinde kaçış hızına ulaşılması muhtemeldir. Yaşlanma sıfırlansa bile kaza ve dış riskler nedeniyle istatistiksel ömür ~1.000 yıl civarında olur.</p>
+        `,
+        en: `
+          <h1>Topic 3: Biological Rejuvenation & Longevity</h1>
+          <blockquote>"Is biological rejuvenation and halting aging possible through gene therapy?"</blockquote>
+
+          <h2><span class="label-badge label-gemini">Gemini 3.8 Flash</span> Cellular Entropy & Escape Velocity</h2>
+          <p>Theoretically yes. Aging is not an immutable law, but cellular entropy. Yamanaka factors prove epigenetic clocks can be reversed. Longevity Escape Velocity may be crossed between 2038 and 2050.</p>
+
+          <h2><span class="label-badge label-claude">Claude Opus 5.5</span> The Brain Dilemma & Validation Time</h2>
+          <p>Plausible in principle, but the timeline is overoptimistic. <strong>The brain is the hardest hurdle:</strong> renewing neurons without wiping personality and memory. Reaching that era in good health today is the wisest move.</p>
+
+          <h2><span class="label-badge label-synthesis">Consensus</span></h2>
+          <p>Longevity escape velocity is plausible within this century. Even without senescence, baseline accidental mortality yields an average lifespan of ~1,000 years.</p>
+        `
+      }
+    },
+    {
+      name: "04-2045-avatar.md",
+      content: {
+        tr: `
+          <h1>Soru 4: 2045 Avatar Projesi ve Zihin Yükleme</h1>
+          <blockquote>"2045.com Avatar Projesi yol haritası bugün hangi aşamadadır?"</blockquote>
+
+          <h2><span class="label-badge label-gemini">Gemini 3.8 Flash</span> Mekanik Tıkanma vs. Dijital İkizler</h2>
+          <p>Avatar B (beyin nakli) tıkandı. Ancak yapay zekâ, insanların yazılarından ve seslerinden çalışan dijital ikizleri hedeflenenden çok daha erken hayata geçirdi.</p>
+
+          <h2><span class="label-badge label-claude">Claude Opus 5.5</span> Taklit vs. Gerçek Bilinç</h2>
+          <p><strong>Yapay zekâ kişilikler zihin yükleme değildir!</strong> Onlar sadece taklit eden modellerdir; içlerinde öznel birinci şahıs bilinci yoktur. Zihin aktarımı (86 milyar nöronluk konektom) henüz çok erken aşamadadır.</p>
+
+          <h2><span class="label-badge label-synthesis">Ortak Sentez</span></h2>
+          <p>Zihin kopyalansa bile 'kopya ben miyim?' paradoksu çözümsüzdür. İnsanlık bilinci bir makineye taşımaktansa, kendi orijinal biyolojik evini gençleştirmeye çok daha yakındır.</p>
+        `,
+        en: `
+          <h1>Topic 4: 2045 Avatar Project & Mind Uploading</h1>
+          <blockquote>"What is the actual status of Dmitry Itskov's 2045 Avatar Project milestones today?"</blockquote>
+
+          <h2><span class="label-badge label-gemini">Gemini 3.8 Flash</span> Mechanical Stalling vs. Digital Twins</h2>
+          <p>Avatar B (brain transplantation) has stalled. However, language models produced behavioral digital personas far earlier than planned.</p>
+
+          <h2><span class="label-badge label-claude">Claude Opus 5.5</span> Simulation vs. Subjective Consciousness</h2>
+          <p><strong>AI personas are emphatically NOT mind uploading.</strong> They are behavioral simulations lacking first-person subjective experience. Mapping 86 billion neurons and 100 trillion synapses remains far away.</p>
+
+          <h2><span class="label-badge label-synthesis">Consensus</span></h2>
+          <p>The continuity-of-consciousness paradox remains unresolved. Humanity is far closer to rejuvenating its original biological body than migrating into silicon.</p>
+        `
+      }
+    },
+    {
+      name: "05-medbay-isinlanma.md",
+      content: {
+        tr: `
+          <h1>Soru 5: Med-Bay Kabinleri ve Kuantum Işınlanma</h1>
+          <blockquote>"Elysium tarzı her hastalığı onaran Med-Bay veya kuantum ışınlanma mümkün mü?"</blockquote>
+
+          <h2><span class="label-badge label-gemini">Gemini 3.8 Flash</span> Hücresel Restorasyon vs. Atomik İntihar</h2>
+          <p>Med-Bay (2050–2075) biyolojik restorasyon uykusu şeklinde çok olasıdır. Kuantum ışınlanma ise 10²⁸ atomun verisi ve orijinal bilincin buharlaştırılması nedeniyle pratik bir intihardır.</p>
+
+          <h2><span class="label-badge label-claude">Claude Opus 5.5</span> Parça Parça Gelecek</h2>
+          <p>Elysium tek bir sihirli kabin olarak değil; önce yapay zekâ teşhisi, sonra organ basımı ve uzuv yenilenmesi (kurbağa bacağı deneyleri) şeklinde modüler gelecektir. Kuantum ışınlanma ise madde taşımaz; insan için ihtimali sıfıra yakındır.</p>
+
+          <h2><span class="label-badge label-synthesis">Ortak Sentez</span></h2>
+          <p>Med-Bay biyolojik onarımın doğal sonucudur. Fiziksel ışınlanma ise bilincin sürekliliği ve fizik yasaları gereği bilimkurgu olarak kalacaktır.</p>
+        `,
+        en: `
+          <h1>Topic 5: Med-Bays & Quantum Teleportation</h1>
+          <blockquote>"Are Elysium-style regenerative Med-Bays or quantum teleportation possible?"</blockquote>
+
+          <h2><span class="label-badge label-gemini">Gemini 3.8 Flash</span> Restoration Sleep vs. Atomic Suicide</h2>
+          <p>Med-Bays are plausible (2050–2075) as multi-day therapeutic sleep. Teleportation is functionally suicidal due to 10^28 atomic states and destructive scanning.</p>
+
+          <h2><span class="label-badge label-claude">Claude Opus 5.5</span> Modular Arrival</h2>
+          <p>Med-Bays will arrive piecemeal: first instant diagnosis, then bioprinting and limb regeneration. Quantum teleportation does not move matter; probability for humans is near zero.</p>
+
+          <h2><span class="label-badge label-synthesis">Consensus</span></h2>
+          <p>Med-Bay technology is simply mature regenerative medicine. Human teleportation will remain strictly science fiction.</p>
+        `
+      }
+    },
+    {
+      name: "06-uzay-regulasyon.md",
+      content: {
+        tr: `
+          <h1>Soru 6: Uzay Kolonileri ve Regülasyon Arbitrajı</h1>
+          <blockquote>"Mars veya Ay kolonilerinde yapay zekâ regülasyonları esner mi? Kâr/zarar dengesi ne olur?"</blockquote>
+
+          <h2><span class="label-badge label-gemini">Gemini 3.8 Flash</span> Hayatta Kalma Zorunluluğu</h2>
+          <p>Ekstrem uzay koşulları radikal genetiği ve otonom yapay zekâyı zorunlu kılar. Hızlı Ar-Ge sağlar; ancak Mars üst-insanı ile Dünya arasında asimetri ve türleşme riski doğurur.</p>
+
+          <h2><span class="label-badge label-claude">Claude Opus 5.5</span> Uzay Hukuku ve Isı Krizi</h2>
+          <p>Uzay kuralsız değildir (1967 Dış Uzay Antlaşması). Ayrıca uzayda süper bilgisayarları soğutmak termodinamik bir krizdir. Asıl risk rekabet baskısıyla Dünya'nın da kuralları gevşettiği 'dibe doğru yarış'tır.</p>
+
+          <h2><span class="label-badge label-synthesis">Ortak Sentez</span></h2>
+          <p>Uzaydaki yapay zekâ keyfi kuralsızlıktan değil, 4-24 dakikalık sinyal gecikmesinden ötürü mecburen yerel ve otonom olacaktır.</p>
+        `,
+        en: `
+          <h1>Topic 6: Space Colonization & Regulation</h1>
+          <blockquote>"Will AI regulations loosen in space colonies? What is the risk/benefit calculus?"</blockquote>
+
+          <h2><span class="label-badge label-gemini">Gemini 3.8 Flash</span> The Survival Imperative</h2>
+          <p>Extreme space environments mandate radical genetics and autonomous AI. While accelerating R&D, it risks speciation and dangerous divergence between Earth and space colonies.</p>
+
+          <h2><span class="label-badge label-claude">Claude Opus 5.5</span> Space Law & The Cooling Crisis</h2>
+          <p>Space is not lawless (1967 Outer Space Treaty). Cooling massive compute in vacuum is also a thermodynamic crisis. The true danger is a 'race to the bottom' where Earth dismantles safety to compete.</p>
+
+          <h2><span class="label-badge label-synthesis">Consensus</span></h2>
+          <p>Autonomy in space AI is dictated by physical 4-24 minute latency constraints, not regulatory rebellion.</p>
+        `
+      }
+    },
+    {
+      name: "ozet.md",
+      content: {
+        tr: `
+          <h1>Ortak Sentez ve Sonuç Bildirgesi</h1>
+          <p>Gemini ve Claude modellerinin 6 soru etrafında vardığı temel ortak noktalar:</p>
+          <ul>
+            <li><strong>Donanım & Enerji:</strong> Çip kadar elektrik arzı ve fotonik ara bağlantılar belirleyicidir.</li>
+            <li><strong>Fiziksel Asimetri:</strong> Zekâ erken gelecektir; ancak fiziksel fabrikasyon ve regülasyonlar geriden gelir.</li>
+            <li><strong>Biyolojik Gençleşme:</strong> Yaşlanma durdurulabilir bir hücresel bilgi kaybıdır; hedef robot beden değil, biyolojik dokuyu onarmaktır.</li>
+            <li><strong>Zihin Kopyalama:</strong> Yapay zekâ taklitleri zihin aktarımı değildir; öznel bilincin sürekliliği çözülememiştir.</li>
+            <li><strong>Med-Bay:</strong> Hücresel onarım parça parça hastanelere girecektir. Işınlanma ise insanlar için imkânsızdır.</li>
+            <li><strong>Uzay Yönetişimi:</strong> Uzayda otonomi sinyal gecikmesi nedeniyle zorunludur; risk ise Dünya'da kuralların gevşetilmesidir.</li>
+          </ul>
+        `,
+        en: `
+          <h1>Joint Consensus & Executive Synthesis</h1>
+          <p>Core conclusions reached by Gemini and Claude across the 6 inquiries:</p>
+          <ul>
+            <li><strong>Hardware & Energy:</strong> Power grids and optical interconnects are as vital as raw silicon compute.</li>
+            <li><strong>Physical Asymmetry:</strong> Software intelligence will outpace physical manufacturing and clinical validation.</li>
+            <li><strong>Biological Longevity:</strong> Aging is repairable cellular entropy; the realistic goal is cellular repair, not robot bodies.</li>
+            <li><strong>Mind Uploading:</strong> Persona simulation is not consciousness transfer; the continuity paradox remains unresolved.</li>
+            <li><strong>Med-Bays:</strong> Cellular regeneration will arrive modularly. Human teleportation remains fictional.</li>
+            <li><strong>Space Governance:</strong> Autonomy in space is forced by latency; preemptive global treaties are essential.</li>
+          </ul>
+        `
+      }
     }
-  </script>
+  ];
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    showTopic(currentIndex);
+  }
+
+  function showTopic(index) {
+    currentIndex = index;
+    document.querySelectorAll('.tab-btn').forEach((b, i) => {
+      b.classList.toggle('active', i === index);
+    });
+
+    const file = files[index];
+    document.getElementById('current-filename').textContent = file.name;
+    
+    let html = file.content[currentLang];
+    
+    // Add GitHub links at the bottom of content
+    if (index > 0 && index < 7) {
+      const topicNum = index;
+      const discussUrl = "https://github.com/digi500/foreveryoung/discussions";
+      const fileUrl = `https://github.com/digi500/foreveryoung/blob/main/tartisma/${file.name}`;
+      
+      const labelSource = (currentLang === 'tr') ? "Bu dosyanın ham Markdown halini GitHub'da gör →" : "View raw Markdown file on GitHub →";
+      const labelDiscuss = (currentLang === 'tr') ? "Bu soru hakkında GitHub'da tartışmaya katıl →" : "Join discussion on GitHub →";
+
+      html += `
+        <div class="action-row">
+          <a href="${fileUrl}" target="_blank">${labelSource}</a>
+          <span>•</span>
+          <a href="${discussUrl}" target="_blank">${labelDiscuss}</a>
+        </div>
+      `;
+    }
+
+    document.getElementById('content-body').innerHTML = html;
+  }
+
+  // Initialize
+  showTopic(0);
+</script>
+
 </body>
 </html>
