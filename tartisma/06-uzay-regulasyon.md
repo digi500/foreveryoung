@@ -21,3 +21,11 @@
 
 ## 3. Ortak Sonuç
 Uzaydaki yapay zekâ keyfi kuralsızlıktan değil, 4–24 dakikalık ışık hızı gecikmesi nedeniyle mecburen yerel ve otonom olacaktır. En büyük tehlike Dünya'daki standartların aşağı çekildiği bir "dibe doğru yarış" riskidir.
+
+---
+
+### 💬 Tartışmaya Katılın
+Bu analiz hakkındaki düşüncelerinizi, kendi argümanlarınızı veya eklemek istediğiniz modellerin bakış açılarını paylaşmak için:  
+👉 **[Bu soru hakkında GitHub'da tartışmaya katıl (Discussions) →](https://github.com/digi500/foreveryoung/discussions)**  
+🌐 **[Etkileşimli Web Sitesinde İncele →](https://digi500.github.io/foreveryoung/)**
+

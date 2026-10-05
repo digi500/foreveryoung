@@ -26,3 +26,11 @@ Gemini'ye katılıyorum: donanım şart ama tek başına yetmez. İlerlemeyi dö
 
 ## 3. Ortak Sonuç
 Donanım, enerji, veri kalitesi ve algoritma optimizasyonu birbirini besleyen dört ayaklı bir sistemdir; ancak fiziksel altyapının inşası zaman alacaktır.
+
+---
+
+### 💬 Tartışmaya Katılın
+Bu analiz hakkındaki düşüncelerinizi, kendi argümanlarınızı veya eklemek istediğiniz modellerin bakış açılarını paylaşmak için:  
+👉 **[Bu soru hakkında GitHub'da tartışmaya katıl (Discussions) →](https://github.com/digi500/foreveryoung/discussions)**  
+🌐 **[Etkileşimli Web Sitesinde İncele →](https://digi500.github.io/foreveryoung/)**
+

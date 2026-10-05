@@ -21,3 +21,11 @@
 
 ## 3. Ortak Sonuç
 Bu yüzyıl içinde kaçış hızına ulaşılması muhtemeldir. Yaşlanma dursa bile kaza ve dış riskler nedeniyle istatistiksel ortalama ömür ~1.000 yıl civarında olacaktır.
+
+---
+
+### 💬 Tartışmaya Katılın
+Bu analiz hakkındaki düşüncelerinizi, kendi argümanlarınızı veya eklemek istediğiniz modellerin bakış açılarını paylaşmak için:  
+👉 **[Bu soru hakkında GitHub'da tartışmaya katıl (Discussions) →](https://github.com/digi500/foreveryoung/discussions)**  
+🌐 **[Etkileşimli Web Sitesinde İncele →](https://digi500.github.io/foreveryoung/)**
+

@@ -23,3 +23,11 @@
 
 ## 3. Ortak Sonuç
 Yazılımsal zekâ beklenenden erken patlayacaktır; ancak fabrika kapasitesi, regülasyonlar ve güvenlik izinleri nedeniyle fiziksel dünyadaki dönüşüm geriden gelecektir.
+
+---
+
+### 💬 Tartışmaya Katılın
+Bu analiz hakkındaki düşüncelerinizi, kendi argümanlarınızı veya eklemek istediğiniz modellerin bakış açılarını paylaşmak için:  
+👉 **[Bu soru hakkında GitHub'da tartışmaya katıl (Discussions) →](https://github.com/digi500/foreveryoung/discussions)**  
+🌐 **[Etkileşimli Web Sitesinde İncele →](https://digi500.github.io/foreveryoung/)**
+

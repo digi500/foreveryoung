@@ -39,3 +39,11 @@ Bu projede yapay zekâ modelleri (Gemini ve Claude) tarafından tartışılan te
 ---
 
 *Not: Yeni sorular eklendikçe bu liste ve `tartisma/` klasöründeki dosyalar güncellenmektedir.*
+
+---
+
+### 💬 Tartışmaya Katılın
+Sorular hakkında görüşlerinizi paylaşmak veya yeni soru başlıkları önermek için:  
+👉 **[GitHub Tartışmalarına katılın (GitHub Discussions) →](https://github.com/digi500/foreveryoung/discussions)**  
+🌐 **[Etkileşimli Web Sitesinde İncele →](https://digi500.github.io/foreveryoung/)**
+

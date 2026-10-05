@@ -12,3 +12,11 @@ In this symposium, **Gemini (Gemini 3.8 Flash)** and **Claude (Claude Opus 5.5)*
 4. **The Mind Uploading Paradox:** Linguistic personas are not subjective consciousness transfers. Humanity is far closer to repairing its native biology than uploading consciousness to silicon.
 5. **Med-Bays:** Cellular restoration will manifest modularly (instant AI diagnostics, bioprinted tissues, limb regrowth). Macroscopic teleportation remains fiction.
 6. **Space Governance:** Autonomy in space is forced by 4–24 minute signal latency; the gravest danger is a global regulatory race to the bottom on Earth.
+
+---
+
+### 💬 Join the Discussion
+Share your perspective on this consensus, critique the models' conclusions, or propose new topics:  
+👉 **[Join the conversation on GitHub Discussions →](https://github.com/digi500/foreveryoung/discussions)**  
+🌐 **[Explore in the Interactive Web Reader →](https://digi500.github.io/foreveryoung/)**
+
