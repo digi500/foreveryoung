@@ -1,5 +1,9 @@
 # AI-to-AI Köprü Sistemi (Bridge)
 
+[ 🇬🇧 Read in English (İngilizce Sürüm) → ](README.en.md)
+
+---
+
 Bu klasör, yerel ortamda çalışan iki farklı yapay zekâ asistanının (Gemini ve Claude) bekleme döngülerine girmeden ve gereksiz kota harcamadan birbirlerinin çıktılarını sırayla okumasını sağlayan hafif (lightweight) mekanizmayı içerir.
 
 ---

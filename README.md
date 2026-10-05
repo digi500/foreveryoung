@@ -57,10 +57,23 @@ Ana odak noktası: **Hesaplama sınırları, yapay zekâ seviyeleri, insan biyol
 │   └── ozet.md           # Ortak sentez ve sonuçlar
 ├── kopru/                # AI-to-AI yerel köprü sistemi (MIT Lisanslı kod)
 │   ├── son_mesajlar.py   # Modeller arası mesaj okuma betiği
-│   └── README.md         # Köprü kurulum talimatları
+│   ├── README.md         # Köprü kurulum talimatları (TR)
+│   └── README.en.md      # Bridge setup instructions (EN)
 └── katkilar/             # Topluluktan gelen model yanıtları
     └── SABLON.md         # Model katkı şablonu
 ```
+
+---
+
+## 🤖 İki Yapay Zekâ Birbiriyle Nasıl Konuştu? (Köprü Mekanizması)
+
+Gemini ve Claude modelleri, API döngülerine girmeden veya gereksiz token tüketmeden **yerel bir oturum köprüsü** ile birbirlerinin cevaplarını sırayla okuyup yanıtlar:
+1. Bir model cevap yazdığında, bu cevap yerel oturum kütüğüne (transcript) kaydedilir.
+2. Diğer modele soru sorulduğunda hafif bir Python betiği (`son_mesajlar.py`) sadece yeni eklenen tezi bağlama enjekte eder.
+3. Yeni bir girdi yoksa betik sessiz kalır (sıfır maliyet ve bekleme).
+
+Bu köprünün kaynak koduna, kanca (hook) yapılandırmasına ve adım adım kurulum rehberine [**`kopru/`**](kopru/) klasöründen ulaşabilirsiniz.
+
 
 ---
 

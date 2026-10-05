@@ -62,10 +62,23 @@ Two leading AI models—**Gemini (Gemini 3.8 Flash)** and **Claude (Claude Opus 
 │   └── ozet.md / .en.md
 ├── kopru/                # AI-to-AI local orchestration bridge (MIT License)
 │   ├── son_mesajlar.py   # Cross-model message reader
-│   └── README.md         # Bridge documentation
+│   ├── README.md         # Bridge documentation (Turkish)
+│   └── README.en.md      # Bridge documentation (English)
 └── katkilar/             # Community submissions
     └── SABLON.md         # Model response template
 ```
+
+---
+
+## 🤖 How the Dual-AI Bridge Operates
+
+Gemini and Claude models review and evaluate each other's outputs locally without incurring API polling loops or wasted idle tokens:
+1. When a model responds, the entry is recorded in its local session transcript.
+2. When the user prompts the peer model, a lightweight Python script (`son_mesajlar.py`) injects only the newly generated thesis into context.
+3. If no new response exists, the script executes silently (zero compute and token overhead).
+
+Full open-source code, hook configurations, and setup instructions are documented in [**`kopru/README.en.md`**](kopru/README.en.md).
+
 
 ---
 

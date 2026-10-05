@@ -1,11 +1,13 @@
 """
-AI-to-AI Köprüsü (Bridge Script)
+AI-to-AI Local Orchestration Bridge / Yerel Köprü Betiği
+Reads new outputs written by peer AI model (Gemini or Claude) since last checkpoint.
 Karşı tarafın (Gemini veya Claude) son kontrolden bu yana yazdığı YENİ cevaplarını okur.
 
-Kullanım:
-  python son_mesajlar.py gemini [kaynak_yol_veya_proje]
-  python son_mesajlar.py claude [kaynak_yol_veya_proje]
+Usage / Kullanım:
+  python son_mesajlar.py gemini [custom_path_pattern]
+  python son_mesajlar.py claude [custom_path_pattern]
 
+Returns nothing if no new response exists (zero extra token / compute overhead).
 Yeni bir mesaj yoksa hiçbir şey yazdırmaz (sıfır ek tüketim).
 """
 import glob
@@ -57,7 +59,7 @@ def claude_metni(d):
 
 def main():
     if len(sys.argv) < 2:
-        print("Kullanım: python son_mesajlar.py gemini|claude [ozel_yol_pattern]")
+        print("Usage / Kullanım: python son_mesajlar.py gemini|claude [custom_path_pattern]")
         return
 
     kim = sys.argv[1].lower()
@@ -65,9 +67,9 @@ def main():
     yol_pattern = ozel_yol or get_kaynaklar(kim)
 
     if not yol_pattern:
-        print(f"Hata: {kim.upper()} için log yolu tanımlanmamış.")
-        print(f"Lütfen '{kim.upper()}_LOG_PATTERN' ortam değişkenini ayarlayın veya komutun sonuna dosya yolu ekleyin.")
-        print(f"Örnek: python son_mesajlar.py {kim} \"~/.{kim}/projects/<proje-adi>/*.jsonl\"")
+        print(f"Error / Hata: Log path for {kim.upper()} is not defined.")
+        print(f"Please set '{kim.upper()}_LOG_PATTERN' environment variable or provide path as an argument.")
+        print(f"Example / Örnek: python son_mesajlar.py {kim} \"~/.{kim}/projects/<project-name>/*.jsonl\"")
         return
 
     dosyalar = glob.glob(yol_pattern)
