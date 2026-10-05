@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>foreveryoung — AI Dialogues</title>
-  <meta name="description" content="Hesaplama sınırları, yapay zekâ seviyeleri ve biyolojik gençleşme üzerine Gemini ve Claude diyalogları.">
+  <title>Forever Young — AI Research Symposium</title>
+  <meta name="description" content="Hesaplama sınırları, yapay zekâ seviyeleri ve biyolojik gençleşme üzerine Gemini 3.8 ve Claude Opus 5.5 diyalogları.">
+  <meta name="author" content="digi500">
   <style>
     :root {
       --bg: #0d1117;
       --card-bg: #161b22;
       --border: #30363d;
-      --text: #f0f6fc;
+      --text: #e6edf3;
       --text-muted: #8b949e;
       --link: #58a6ff;
       --tag-bg: #21262d;
-      --code-bg: #161b22;
-      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
-      --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,12 +30,12 @@
     }
 
     .wrapper {
-      max-width: 1012px;
+      max-width: 980px;
       margin: 0 auto;
     }
 
-    /* Top Repo Header */
-    .repo-header {
+    /* Site Header */
+    .site-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -45,30 +45,57 @@
       flex-wrap: wrap;
       gap: 1rem;
     }
-    .repo-title {
+    .brand-group {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.75rem;
+    }
+    .brand-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #1f6feb, #238636);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+    .brand-title {
       font-size: 1.15rem;
-      font-weight: 400;
-    }
-    .repo-title a {
-      color: var(--link);
-      text-decoration: none;
-    }
-    .repo-title a:hover { text-decoration: underline; }
-    .repo-title .repo-name {
-      font-weight: 600;
+      font-weight: 700;
+      letter-spacing: 0.5px;
       color: var(--text);
     }
-    .badge-public {
+    .brand-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .gh-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       font-size: 12px;
       font-weight: 500;
       color: var(--text-muted);
+      text-decoration: none;
+      padding: 5px 12px;
       border: 1px solid var(--border);
-      border-radius: 2em;
-      padding: 0 7px;
-      line-height: 18px;
+      border-radius: 6px;
+      background: var(--card-bg);
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .gh-link:hover {
+      color: var(--text);
+      border-color: #8b949e;
     }
 
     .lang-switcher {
@@ -81,12 +108,13 @@
       background: var(--card-bg);
       border: none;
       color: var(--text-muted);
-      padding: 4px 12px;
+      padding: 5px 12px;
       font-size: 12px;
       font-weight: 600;
       cursor: pointer;
       border-right: 1px solid var(--border);
       font-family: var(--font);
+      transition: background-color 0.15s, color 0.15s;
     }
     .lang-btn:last-child { border-right: none; }
     .lang-btn.active {
@@ -97,15 +125,16 @@
     /* Navigation Tabs */
     .tabs-bar {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.35rem;
       overflow-x: auto;
       margin-bottom: 1.5rem;
       border-bottom: 1px solid var(--border);
       padding-bottom: 0.5rem;
+      scrollbar-width: thin;
     }
     .tab-btn {
       background: none;
-      border: none;
+      border: 1px solid transparent;
       color: var(--text-muted);
       padding: 6px 12px;
       font-size: 13px;
@@ -117,6 +146,7 @@
       gap: 6px;
       white-space: nowrap;
       font-family: var(--font);
+      transition: all 0.15s ease;
     }
     .tab-btn:hover {
       background: var(--tag-bg);
@@ -125,37 +155,42 @@
     .tab-btn.active {
       background: var(--tag-bg);
       color: var(--text);
+      border-color: var(--border);
       font-weight: 600;
     }
 
-    /* Document Box */
-    .box {
+    /* Reading Card */
+    .reader-card {
       border: 1px solid var(--border);
-      border-radius: 6px;
-      background: var(--bg);
+      border-radius: 8px;
+      background: var(--card-bg);
       overflow: hidden;
       margin-bottom: 2rem;
     }
-    .box-header {
-      background: var(--card-bg);
-      padding: 10px 16px;
+    .card-meta-bar {
+      background: rgba(13, 17, 23, 0.6);
+      padding: 10px 20px;
       border-bottom: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-size: 12px;
       color: var(--text-muted);
-      font-family: var(--font-mono);
     }
-    .box-body {
+    .card-meta-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-content {
       padding: 32px;
-      font-size: 14px;
-      line-height: 1.7;
+      font-size: 14.5px;
+      line-height: 1.75;
     }
 
-    /* Markdown Styling */
+    /* Article Content Typography */
     h1 {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 600;
       margin-bottom: 16px;
       padding-bottom: 8px;
@@ -163,7 +198,7 @@
       color: var(--text);
     }
     h2 {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 600;
       margin-top: 28px;
       margin-bottom: 12px;
@@ -212,23 +247,56 @@
 
     .action-row {
       display: flex;
+      flex-wrap: wrap;
       gap: 12px;
-      margin-top: 24px;
-      padding-top: 16px;
+      margin-top: 28px;
+      padding-top: 20px;
       border-top: 1px solid var(--border);
-      font-size: 13px;
     }
-    .action-row a {
-      color: var(--link);
+    .btn-discuss {
+      background: #238636;
+      color: #fff;
+      padding: 7px 14px;
+      border-radius: 6px;
       text-decoration: none;
+      font-weight: 500;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background-color 0.15s;
     }
-    .action-row a:hover { text-decoration: underline; }
+    .btn-discuss:hover {
+      background: #2ea043;
+      text-decoration: none;
+      color: #fff;
+    }
+    .btn-source {
+      background: #21262d;
+      color: #c9d1d9;
+      border: 1px solid var(--border);
+      padding: 7px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+    }
+    .btn-source:hover {
+      background: #30363d;
+      border-color: #8b949e;
+      text-decoration: none;
+      color: #fff;
+    }
 
     footer {
       text-align: center;
       font-size: 12px;
       color: var(--text-muted);
-      padding: 20px 0;
+      padding: 24px 0 36px;
     }
     footer a { color: var(--text-muted); text-decoration: none; }
     footer a:hover { color: var(--link); text-decoration: underline; }
@@ -238,45 +306,51 @@
 
 <div class="wrapper">
   
-  <!-- Repo Header -->
-  <header class="repo-header">
-    <div class="repo-title">
-      <a href="https://github.com/digi500">digi500</a>
-      <span>/</span>
-      <span class="repo-name">foreveryoung</span>
-      <span class="badge-public">Public</span>
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="brand-group">
+      <div class="brand-badge">FY</div>
+      <div>
+        <div class="brand-title">FOREVER YOUNG</div>
+        <div class="brand-sub">AI Research Symposium • Gemini 3.8 &amp; Claude Opus 5.5</div>
+      </div>
     </div>
-    <div class="lang-switcher">
-      <button class="lang-btn active" id="btn-tr" onclick="setLang('tr')">Türkçe</button>
-      <button class="lang-btn" id="btn-en" onclick="setLang('en')">English</button>
+    <div class="header-actions">
+      <a href="https://github.com/digi500/foreveryoung" target="_blank" rel="noopener" class="gh-link">
+        <svg height="15" viewBox="0 0 16 16" width="15" fill="currentColor"><path d="M8 0c4.42 0 8 3.58 8 8a8.01 8.01 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg>
+        <span>GitHub Repository</span>
+      </a>
+      <div class="lang-switcher">
+        <button class="lang-btn active" id="btn-tr" onclick="setLang('tr')">Türkçe</button>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')">English</button>
+      </div>
     </div>
   </header>
 
   <!-- Navigation Tabs -->
-  <nav class="tabs-bar">
-    <button class="tab-btn active" onclick="showTopic(0)" id="tab-0">README.md</button>
-    <button class="tab-btn" onclick="showTopic(1)" id="tab-1">01-teknoloji.md</button>
-    <button class="tab-btn" onclick="showTopic(2)" id="tab-2">02-yz-seviyeleri.md</button>
-    <button class="tab-btn" onclick="showTopic(3)" id="tab-3">03-genclik.md</button>
-    <button class="tab-btn" onclick="showTopic(4)" id="tab-4">04-2045-avatar.md</button>
-    <button class="tab-btn" onclick="showTopic(5)" id="tab-5">05-medbay-isinlanma.md</button>
-    <button class="tab-btn" onclick="showTopic(6)" id="tab-6">06-uzay-regulasyon.md</button>
-    <button class="tab-btn" onclick="showTopic(7)" id="tab-7">ozet.md</button>
+  <nav class="tabs-bar" id="topics-nav">
+    <!-- Rendered dynamically -->
   </nav>
 
-  <!-- Main File Viewer -->
-  <main class="box">
-    <div class="box-header">
-      <span id="current-filename">README.md</span>
-      <span>UTF-8</span>
+  <!-- Reading Card -->
+  <main class="reader-card">
+    <div class="card-meta-bar">
+      <div class="card-meta-left">
+        <span id="meta-tag">Sempozyum Bildirisi</span>
+        <span>•</span>
+        <span>Gemini 3.8 Flash &amp; Claude Opus 5.5</span>
+      </div>
+      <div>
+        <span id="current-doc-name">README.md</span>
+      </div>
     </div>
-    <div class="box-body" id="content-body">
+    <div class="card-content" id="content-body">
       <!-- Injected by JavaScript -->
     </div>
   </main>
 
   <footer>
-    <p>Forever Young © 2026 • CC BY 4.0 & MIT • <a href="https://github.com/digi500/foreveryoung">GitHub Repository</a> • <a href="https://github.com/digi500/foreveryoung/discussions">Discussions</a></p>
+    <p>Forever Young © 2026 • CC BY 4.0 &amp; MIT • <a href="https://github.com/digi500/foreveryoung">GitHub Repository</a> • <a href="https://github.com/digi500/foreveryoung/discussions">Discussions</a></p>
   </footer>
 
 </div>
@@ -544,29 +618,49 @@
     }
   ];
 
-  function updateTabLabels() {
-    files.forEach((file, idx) => {
-      const tab = document.getElementById(`tab-${idx}`);
-      if (tab) {
-        if (idx === 0) {
-          tab.textContent = (currentLang === 'en') ? 'README.en.md' : 'README.md';
-        } else {
-          tab.textContent = (currentLang === 'en') ? file.name.replace('.md', '.en.md') : file.name;
-        }
-      }
-    });
+  const topicTitles = {
+    tr: [
+      "Genel Bakış",
+      "1. Donanım Sınırları",
+      "2. YZ Seviyeleri",
+      "3. Biyolojik Gençleşme",
+      "4. 2045 Avatar",
+      "5. Med-Bay & Işınlanma",
+      "6. Uzay & Regülasyon",
+      "Sentez ve Sonuç"
+    ],
+    en: [
+      "Overview",
+      "1. Hardware Limits",
+      "2. AI Capability Tiers",
+      "3. Biological Longevity",
+      "4. 2045 Avatar",
+      "5. Med-Bays & Teleportation",
+      "6. Space Governance",
+      "Consensus & Synthesis"
+    ]
+  };
+
+  function renderTabs() {
+    const nav = document.getElementById('topics-nav');
+    const titles = topicTitles[currentLang];
+    nav.innerHTML = titles.map((title, idx) => `
+      <button class="tab-btn ${idx === currentIndex ? 'active' : ''}" onclick="showTopic(${idx})" id="tab-${idx}">
+        ${title}
+      </button>
+    `).join('');
   }
 
   function setLang(lang) {
     currentLang = lang;
     try { localStorage.setItem('foreveryoung_lang', lang); } catch (e) {}
     document.documentElement.lang = lang;
-    document.title = (lang === 'tr') ? 'foreveryoung — Yapay Zekâ Diyalogları' : 'foreveryoung — AI Dialogues';
+    document.title = (lang === 'tr') ? 'Forever Young — Yapay Zekâ Sempozyumu' : 'Forever Young — AI Research Symposium';
     
     document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     
-    updateTabLabels();
+    renderTabs();
     showTopic(currentIndex);
   }
 
@@ -581,30 +675,36 @@
       ? (currentLang === 'en' ? 'README.en.md' : 'README.md')
       : (currentLang === 'en' ? file.name.replace('.md', '.en.md') : file.name);
 
-    document.getElementById('current-filename').textContent = displayFilename;
+    const docElem = document.getElementById('current-doc-name');
+    if (docElem) docElem.textContent = displayFilename;
     
+    const tagElem = document.getElementById('meta-tag');
+    if (tagElem) {
+      tagElem.textContent = (index === 0) 
+        ? (currentLang === 'tr' ? 'Genel Tanıtım' : 'Overview Document')
+        : (index === 7 ? (currentLang === 'tr' ? 'Sonuç Bildirgesi' : 'Executive Synthesis') : (currentLang === 'tr' ? 'Sempozyum Diyaloğu' : 'Symposium Dialogue'));
+    }
+
     let html = file.content[currentLang];
     
     // Add GitHub links at the bottom of content
-    const isTopic = (index > 0 && index < 7);
     const isReadme = (index === 0);
-
     const discussUrl = "https://github.com/digi500/foreveryoung/discussions";
     const fileUrl = isReadme
       ? `https://github.com/digi500/foreveryoung/blob/main/${displayFilename}`
       : `https://github.com/digi500/foreveryoung/blob/main/tartisma/${displayFilename}`;
 
-    const labelSource = (currentLang === 'tr') 
-      ? `Bu dosyanın ham Markdown halini GitHub'da gör (${displayFilename}) →` 
-      : `View raw Markdown file on GitHub (${displayFilename}) →`;
     const labelDiscuss = (currentLang === 'tr') 
-      ? "Bu soru hakkında GitHub'da tartışmaya katıl →" 
+      ? "Bu konu hakkında GitHub'da tartışmaya katıl →" 
       : "Join discussion on GitHub →";
+    const labelSource = (currentLang === 'tr') 
+      ? `GitHub'daki kaynak dosya (${displayFilename}) →` 
+      : `View source on GitHub (${displayFilename}) →`;
 
     html += `
       <div class="action-row">
-        <a href="${fileUrl}" target="_blank" rel="noopener">${labelSource}</a>
-        ${isTopic ? `<span>•</span><a href="${discussUrl}" target="_blank" rel="noopener">${labelDiscuss}</a>` : ''}
+        <a href="${discussUrl}" target="_blank" rel="noopener" class="btn-discuss">💬 ${labelDiscuss}</a>
+        <a href="${fileUrl}" target="_blank" rel="noopener" class="btn-source">📄 ${labelSource}</a>
       </div>
     `;
 

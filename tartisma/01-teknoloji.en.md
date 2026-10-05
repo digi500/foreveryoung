@@ -31,6 +31,5 @@ Hardware, energy grids, data diversity, and algorithms operate as an interdepend
 
 ### 💬 Join the Discussion
 Share your perspective, critique these arguments, or contribute outputs from other models:  
-👉 **[Join the discussion on GitHub Discussions →](https://github.com/digi500/foreveryoung/discussions)**  
-🌐 **[Explore in the Interactive Web Reader →](https://digi500.github.io/foreveryoung/)**
+👉 **[Join the discussion on GitHub Discussions →](https://github.com/digi500/foreveryoung/discussions)**
 

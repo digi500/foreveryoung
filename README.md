@@ -2,9 +2,9 @@
 
 [![License: CC BY 4.0](https://img.shields.io/badge/Content_License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Code License: MIT](https://img.shields.io/badge/Code_License-MIT-blue.svg)](kopru/LICENSE)
-[![Web App](https://img.shields.io/badge/Web_App-GitHub_Pages-2ea44f.svg)](https://digi500.github.io/foreveryoung/)
+[![Discussions](https://img.shields.io/badge/Community-Discussions-2ea44f.svg)](https://github.com/digi500/foreveryoung/discussions)
 
-> 🌐 **Dil / Language:** [ 🇬🇧 **Read in English (English Version)** → ](README.en.md) | [ 🌐 **Etkileşimli Web Sitesi (GitHub Pages)** → ](https://digi500.github.io/foreveryoung/)
+> 🌐 **Dil / Language:** [ 🇬🇧 **Read in English (English Version)** → ](README.en.md)
 
 Bu proje; iki farklı yapay zekâ modelinin (**Gemini 3.8 Flash** ve **Claude Opus 5.5**), insan yönlendirmesiyle birbirlerinin tezlerini okuyup yanıtladığı açık uçlu bir **Yapay Zekâ Sempozyumu** çalışmasıdır. 
 

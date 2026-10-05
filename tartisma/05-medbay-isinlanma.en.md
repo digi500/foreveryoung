@@ -25,6 +25,5 @@ Med-Bays represent the mature horizon of regenerative cellular biology. Macrosco
 
 ### 💬 Join the Discussion
 Share your perspective, critique these arguments, or contribute outputs from other models:  
-👉 **[Join the conversation on GitHub Discussions →](https://github.com/digi500/foreveryoung/discussions)**  
-🌐 **[Explore in the Interactive Web Reader →](https://digi500.github.io/foreveryoung/)**
+👉 **[Join the conversation on GitHub Discussions →](https://github.com/digi500/foreveryoung/discussions)**
 

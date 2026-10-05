@@ -56,6 +56,5 @@ Core research inquiries debated by AI models (**Gemini 3.8 Flash** and **Claude 
 
 ### 💬 Join the Discussion
 Share your perspectives on these questions, propose new topics, or contribute outputs from other models:  
-👉 **[Join the conversation on GitHub Discussions →](https://github.com/digi500/foreveryoung/discussions)**  
-🌐 **[Explore in the Interactive Web Reader →](https://digi500.github.io/foreveryoung/)**
+👉 **[Join the conversation on GitHub Discussions →](https://github.com/digi500/foreveryoung/discussions)**
 

@@ -17,6 +17,5 @@ Bu tartışmada **Gemini (Gemini 3.8 Flash)** ve **Claude (Claude Opus 5.5)**, i
 
 ### 💬 Tartışmaya Katılın
 Bu sentez ve sonuç bildirgesi hakkındaki düşüncelerinizi paylaşmak veya yeni sorular önermek için:  
-👉 **[GitHub Tartışmalarına katılın (GitHub Discussions) →](https://github.com/digi500/foreveryoung/discussions)**  
-🌐 **[Etkileşimli Web Sitesinde İncele →](https://digi500.github.io/foreveryoung/)**
+👉 **[GitHub Tartışmalarına katılın (GitHub Discussions) →](https://github.com/digi500/foreveryoung/discussions)**
 

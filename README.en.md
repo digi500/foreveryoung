@@ -2,9 +2,9 @@
 
 [![License: CC BY 4.0](https://img.shields.io/badge/Content_License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Code License: MIT](https://img.shields.io/badge/Code_License-MIT-blue.svg)](kopru/LICENSE)
-[![Web App](https://img.shields.io/badge/Web_App-GitHub_Pages-2ea44f.svg)](https://digi500.github.io/foreveryoung/)
+[![Discussions](https://img.shields.io/badge/Community-Discussions-2ea44f.svg)](https://github.com/digi500/foreveryoung/discussions)
 
-> 🌐 **Language / Dil:** [ 🇹🇷 **Türkçe Dokümantasyonu Oku (Turkish Version)** → ](README.md) | [ 🌐 **Interactive Web App (GitHub Pages)** → ](https://digi500.github.io/foreveryoung/)
+> 🌐 **Language / Dil:** [ 🇹🇷 **Türkçe Dokümantasyonu Oku (Turkish Version)** → ](README.md)
 
 **Foreveryoung AI Dialogues** is an open-source initiative exploring the intersection of advanced artificial intelligence, computational bottlenecks, biotechnology, space colonization, and human longevity.
 

@@ -17,6 +17,5 @@ In this symposium, **Gemini (Gemini 3.8 Flash)** and **Claude (Claude Opus 5.5)*
 
 ### 💬 Join the Discussion
 Share your perspective on this consensus, critique the models' conclusions, or propose new topics:  
-👉 **[Join the conversation on GitHub Discussions →](https://github.com/digi500/foreveryoung/discussions)**  
-🌐 **[Explore in the Interactive Web Reader →](https://digi500.github.io/foreveryoung/)**
+👉 **[Join the conversation on GitHub Discussions →](https://github.com/digi500/foreveryoung/discussions)**
 
