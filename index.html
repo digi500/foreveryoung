@@ -566,7 +566,8 @@
     if (index > 0 && index < 7) {
       const topicNum = index;
       const discussUrl = "https://github.com/digi500/foreveryoung/discussions";
-      const fileUrl = `https://github.com/digi500/foreveryoung/blob/main/tartisma/${file.name}`;
+      const anchor = (currentLang === "en") ? "#english" : "#türkçe";
+      const fileUrl = `https://github.com/digi500/foreveryoung/blob/main/tartisma/${file.name}${anchor}`;
       
       const labelSource = (currentLang === 'tr') ? "Bu dosyanın ham Markdown halini GitHub'da gör →" : "View raw Markdown file on GitHub →";
       const labelDiscuss = (currentLang === 'tr') ? "Bu soru hakkında GitHub'da tartışmaya katıl →" : "Join discussion on GitHub →";
@@ -584,7 +585,12 @@
   }
 
   // Initialize
-  showTopic(0);
+  
+  // Tarayici dilini otomatik algila
+  const browserLang = (navigator.language || navigator.userLanguage || 'tr').toLowerCase();
+  const detectedLang = browserLang.startsWith('tr') ? 'tr' : 'en';
+  setLang(detectedLang);
+
 </script>
 
 </body>
