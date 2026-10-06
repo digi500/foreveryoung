@@ -9,21 +9,23 @@ except Exception:
 
 KOPRU = os.path.dirname(os.path.abspath(__file__))
 BETIK = os.path.join(KOPRU, "son_mesajlar.py").replace("\\", "/")
+BILGI = os.path.join(KOPRU, "bilgi.md")
+PYTHON = "python" if os.name == "nt" else "python3"
 ISARET = "<!-- kopru -->"
 
 GEMINI_KURALI = f"""{ISARET}
-# Claude ile ortak çalışma kuralı (C:\\kopru)
+# Claude ile ortak çalışma kuralı (köprü)
 
 Kullanıcının her yeni mesajında, cevap vermeden önce şu komutu çalıştır:
 
 ```
-python {BETIK} claude {{proje}}
+{PYTHON} "{BETIK}" claude "{{proje}}"
 ```
 
 - Komut hiçbir şey yazdırmazsa Claude yeni bir şey yazmamıştır; bundan bahsetme, normal devam et.
 - Çıktı gelirse bu, Claude'un son kontrolden bu yana yazdığı yeni cevaplardır; dikkate al.
 - Claude'un kayıt dosyalarını başka yolla okumaya çalışma; yalnızca bu komutu kullan.
-- Çalışma düzeni ve kesin kurallar: `C:\\kopru\\bilgi.md` (oku ve uy).
+- Çalışma düzeni ve kesin kurallar: `{BILGI}` (oku ve uy).
 - Görevlerin: `.ortak\\gorevler.md` · Raporun: `.ortak\\rapor.md` · Claude'un düzeltmeleri: `.ortak\\kontrol.md`
 """
 
@@ -60,7 +62,7 @@ def kur(proje):
             ayar = json.load(f)
     except FileNotFoundError:
         ayar = {}
-    komut = f'python "{BETIK}" gemini "{proje}"'
+    komut = f'{PYTHON} "{BETIK}" gemini "{proje}"'
     liste = ayar.setdefault("hooks", {}).setdefault("UserPromptSubmit", [])
     if "son_mesajlar.py" not in json.dumps(liste):
         liste.append({"hooks": [{"type": "command", "command": komut}]})

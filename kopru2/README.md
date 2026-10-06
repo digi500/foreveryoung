@@ -17,14 +17,52 @@
 | Roller ve kurallar | Yok | `bilgi.md`: yönetici/kontrolcü, çalışan, karar verici; sahte veri yok, gizli bilgi ekrana düşmez |
 | Görev akışı | Yok | `.ortak/gorevler.md` → `rapor.md` → `kontrol.md` |
 
-## Kurulum
+## Gerekenler
 
-1. Bu klasörü bilgisayarınıza kopyalayın (örnek: `C:\kopru`).
-2. Projeye kurun:
+- **Python 3** (`python --version` ile kontrol edin; Linux/macOS'ta `python3`)
+- **Claude Code** (terminal, masaüstü uygulaması veya IDE eklentisi)
+- **Gemini, Antigravity IDE içinde**
+- İkisinin de aynı proje klasöründe çalışması
+
+## Kurulum (adım adım)
+
+1. **İndirin.** GitHub'da yeşil **Code → Download ZIP** ile indirin ya da:
+   ```
+   git clone https://github.com/digi500/foreveryoung.git
+   ```
+2. **`kopru2` klasörünü kalıcı bir yere kopyalayın**, örneğin `C:\kopru`. Sonra bu klasörü taşımayın: kurulum, betiklerin tam yolunu projeye yazar. Taşırsanız kurulumu tekrar yapın.
+3. **Projenize kurun** (terminalde):
    ```
    python C:\kopru\kur.py C:\proje_klasoru
    ```
-3. Claude Code oturumunu yeniden açın. Gemini'ye yeni sohbet açın ya da "GEMINI.md'yi oku" deyin.
+   Ekranda `Köprü kuruldu` ve yapılanların listesi çıkar. Tekrar çalıştırmak güvenlidir.
+4. **Claude Code'u o proje klasöründe yeniden açın.** Hook ancak yeni oturumda devreye girer.
+5. **Antigravity'de yeni sohbet açın** ve Gemini'ye şunu yazın:
+   > `GEMINI.md` dosyasını ve köprü klasöründeki `bilgi.md` dosyasını oku.
+
+## Çalıştığını nasıl anlarım?
+
+1. Gemini'ye bir soru sorun, cevap versin.
+2. Claude'a herhangi bir mesaj yazın. Claude'un ekranında **"[Gemini'nin son kontrolden bu yana yazdığı yeni cevaplar]"** başlığıyla Gemini'nin cevabı görünür.
+3. Tersini deneyin: Claude bir şey yazsın, sonra Gemini'ye mesaj atın. Gemini her mesajda komutu çalıştırıp Claude'un yeni cevabını okur.
+
+İlk çalıştırmada eski konuşma aktarılmaz, sadece kurulumdan sonra yazılanlar gelir.
+
+## Günlük kullanım
+
+1. Claude'a ne istediğinizi söyleyin. Claude görevi `.ortak/gorevler.md` dosyasına yazar.
+2. Gemini'ye "`.ortak/gorevler.md`'deki görevi yap, bitince `.ortak/rapor.md`'ye yaz" deyin.
+3. Claude'a "kontrol et" deyin. Claude raporu gerçek dosya ve çıktılardan doğrular, düzeltmeleri `.ortak/kontrol.md`'ye yazar.
+4. Commit, push ve yayın kararı sizindir.
+
+## Sorun giderme
+
+| Belirti | Çözüm |
+|---|---|
+| Claude'da Gemini'nin cevabı görünmüyor | Claude Code oturumunu proje klasöründe yeniden açın. `.claude/settings.json` içinde `son_mesajlar.py` satırı var mı bakın. |
+| Gemini, Claude'u okumuyor | Antigravity'de yeni sohbet açın ve "GEMINI.md'yi oku" deyin. |
+| `python` bulunamadı | Python 3'ü kurun. Linux/macOS'ta `python3` kullanılır. |
+| Köprü klasörünü taşıdım | `kur.py`'yi yeni yerden tekrar çalıştırın. Eski hook satırını `.claude/settings.json`'dan, eski kuralı `GEMINI.md`'den silin. |
 
 `kur.py` şunları yapar:
 - `<proje>/.ortak/` klasörünü ve `gorevler.md`, `rapor.md`, `kontrol.md` dosyalarını oluşturur.
