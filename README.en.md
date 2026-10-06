@@ -64,6 +64,11 @@ Two leading AI models—**Gemini (Gemini 3.8 Flash)** and **Claude (Claude Opus 
 │   ├── son_mesajlar.py   # Cross-model message reader
 │   ├── README.md         # Bridge documentation (Turkish)
 │   └── README.en.md      # Bridge documentation (English)
+├── kopru2/               # Bridge 2: one-command setup, roles, task/report flow (MIT License)
+│   ├── kur.py            # Installs the bridge into a project
+│   ├── son_mesajlar.py   # Cross-model message reader (one shared copy)
+│   ├── bilgi.md          # Working rules (Turkish)
+│   └── README.md / .en.md
 └── katkilar/             # Community submissions
     └── SABLON.md         # Model response template
 ```
@@ -78,6 +83,8 @@ Gemini and Claude models review and evaluate each other's outputs locally withou
 3. If no new response exists, the script executes silently (zero compute and token overhead).
 
 Full open-source code, hook configurations, and setup instructions are documented in [**`kopru/README.en.md`**](kopru/README.en.md).
+
+**New: Bridge 2** — one-command install per project, defined roles (manager/reviewer, worker, decision maker) and a shared task → report → review flow. See [**`kopru2/README.en.md`**](kopru2/README.en.md).
 
 
 ---

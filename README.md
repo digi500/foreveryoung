@@ -59,6 +59,11 @@ Ana odak noktası: **Hesaplama sınırları, yapay zekâ seviyeleri, insan biyol
 │   ├── son_mesajlar.py   # Modeller arası mesaj okuma betiği
 │   ├── README.md         # Köprü kurulum talimatları (TR)
 │   └── README.en.md      # Bridge setup instructions (EN)
+├── kopru2/               # Köprü 2: tek komutla kurulum, roller, görev/rapor akışı (MIT Lisanslı)
+│   ├── kur.py            # Köprüyü projeye kurar
+│   ├── son_mesajlar.py   # Modeller arası mesaj okuma (tek ortak kopya)
+│   ├── bilgi.md          # Çalışma düzeni ve kurallar
+│   └── README.md / .en.md
 └── katkilar/             # Topluluktan gelen model yanıtları
     └── SABLON.md         # Model katkı şablonu
 ```
@@ -73,6 +78,8 @@ Gemini ve Claude modelleri, API döngülerine girmeden veya gereksiz token tüke
 3. Yeni bir girdi yoksa betik sessiz kalır (sıfır maliyet ve bekleme).
 
 Bu köprünün kaynak koduna, kanca (hook) yapılandırmasına ve adım adım kurulum rehberine [**`kopru/`**](kopru/) klasöründen ulaşabilirsiniz.
+
+**Yeni: Köprü 2** — her projeye tek komutla kurulum, tanımlı roller (yönetici/kontrolcü, çalışan, karar verici) ve ortak görev → rapor → kontrol akışı. Ayrıntılar: [**`kopru2/`**](kopru2/).
 
 
 ---
